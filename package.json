@@ -1,0 +1,40 @@
+{
+  "name": "linux-commit-history-search",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "parcel index.html --port 3000",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "typesenseServer": "docker run -i -p 8108:8108 -v/tmp/typesense-server-data/:/data typesense/typesense:0.20.0 --data-dir /data --api-key=xyz --listen-port 8108 --enable-cors",
+    "extractCommitHistory:merges": "cd data/linux && git log --merges --shortstat --pretty=format:'---tsgitlogseparator---torvalds/linux---tsgitlogseparator---%H---tsgitlogseparator---true---tsgitlogseparator---%aN---tsgitlogseparator---%aE---tsgitlogseparator---%at---tsgitlogseparator---%cN---tsgitlogseparator---%cE---tsgitlogseparator---%ct---tsgitlogseparator---%D---tsgitlogseparator---%s---tsgitlogseparator---%b---tsgitlogseparator---' > ../git-log-output",
+    "extractCommitHistory:nonMerges": "cd data/linux && echo \"\" >> ../git-log-output && git log --no-merges --shortstat --pretty=format:'---tsgitlogseparator---torvalds/linux---tsgitlogseparator---%H---tsgitlogseparator---false---tsgitlogseparator---%aN---tsgitlogseparator---%aE---tsgitlogseparator---%at---tsgitlogseparator---%cN---tsgitlogseparator---%cE---tsgitlogseparator---%ct---tsgitlogseparator---%D---tsgitlogseparator---%s---tsgitlogseparator---%b---tsgitlogseparator---' >> ../git-log-output",
+    "transformDataset": "bundle exec ruby scripts/tranform_git_log.rb",
+    "index": "bundle exec ruby scripts/index.rb",
+    "build": "parcel build index.html --public-url https://linux-commits-search.typesense.org",
+    "deploy": "rm -rf build && yarn build && aws s3 cp --recursive ./dist s3://linux-commits-search.typesense.org/ --profile typesense && yarn clearCDNCache",
+    "clearCDNCache": "aws cloudfront create-invalidation --distribution-id E1595BXBL5OB6C --paths \"/*\" --profile typesense"
+  },
+  "devDependencies": {
+    "babel-eslint": "10.1.0",
+    "eslint": "7.25.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-prettier": "3.4.0",
+    "parcel-bundler": "1.12.5",
+    "prettier": "2.2.1",
+    "sass": "^1.32.12"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.14.0",
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^4.5.2",
+    "dotenv": "^9.0.0",
+    "instantsearch.js": "^4.22.0",
+    "jquery": "^3.6.0",
+    "lodash": "^4.17.21",
+    "popper.js": "^1.16.1",
+    "typesense": "^0.15.0",
+    "typesense-instantsearch-adapter": "^2.1.0"
+  }
+}
