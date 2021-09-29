@@ -24,3 +24,4 @@ yarn-error.log*
 
 /data/*
 !/data/.keep
+!/data/raw/.keep
