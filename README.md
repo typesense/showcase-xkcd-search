@@ -26,23 +26,17 @@ The search backend is powered by a geo-distributed 3-node Typesense cluster runn
 
 1. Create a `.env` file using `.env.example` as reference.
 
-2. Extract commit history
+2. Fetch Data
 
   ```shell
-  mkdir data/linux
-  cd data/linux
-  git checkout https://github.com/torvalds/linux
-  yarn extractCommitHistory:merges
-  yarn extractCommitHistory:nonMerges
+  mkdir -p data/raw
+  yarn fetchData
   ```
 
 3. Transform and index the data
   ```shell
-  bundle install
-  gzip data/git-log-output
-  yarn transformDataset
-  yarn run typesenseServer
-  UPDATE_COLLECTION_ALIAS=true yarn index
+  yarn transformData
+  yarn indexData
   ```
 
 4. Install dependencies and run the local server:
