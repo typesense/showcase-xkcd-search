@@ -50,9 +50,4 @@ Open http://localhost:3000 to see the app.
 
 ## Deployment
 
-The app is hosted on S3, with Cloudfront for a CDN.
-
-```shell
-yarn build
-yarn deploy
-```
+The app is hosted on Cloudflare Pages and is set to auto-deploy on git push
