@@ -10,7 +10,7 @@
     "fetchData": "node scripts/fetchExplainXkcdData.mjs && node scripts/fetchXkcdData.mjs",
     "transformData": "node scripts/transformData.mjs",
     "indexData": "node scripts/indexData.js",
-    "build": "parcel build index.html --public-url https://showcase-xkcd-search.typesense.org"
+    "build": "parcel build index.html --public-url https://xkcd-search.typesense.org"
   },
   "engines": {
     "node": ">=14.0"
