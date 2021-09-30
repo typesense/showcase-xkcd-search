@@ -135,7 +135,7 @@ search.addWidgets([
     container: '#searchbox',
     showSubmit: false,
     showReset: false,
-    placeholder: 'Type in a search term... ',
+    placeholder: 'type in a search term... ',
     autofocus: true,
     cssClasses: {
       input: 'form-control',
@@ -170,7 +170,7 @@ search.addWidgets([
         } else {
           statsText = `${nbHits.toLocaleString()} comics`;
         }
-        return `Found ${statsText} ${
+        return `found ${statsText} ${
           indexSize ? ` from ${indexSize.toLocaleString()}` : ''
         } in ${processingTimeMS}ms.`;
       },
@@ -184,53 +184,32 @@ search.addWidgets([
     cssClasses: {
       list: 'list-unstyled',
       item: 'd-flex flex-column search-result-card mb-5',
-      loadMore: 'btn btn-primary mx-auto d-block mt-4',
-      disabledLoadMore: 'btn btn-dark mx-auto d-block mt-4',
+      loadMore: 'btn btn-secondary mx-auto d-block mt-4',
+      disabledLoadMore: 'btn btn-light mx-auto d-block mt-4',
     },
     templates: {
       item: (data) => {
         return `
             <div class="row">
-              <div class="col-11">
-                <h6 class="text-primary" style="overflow-wrap: break-word;">
+              <div class="col-12">
+                <h3 style="overflow-wrap: break-word;" class="text-secondary">
                   ${data._highlightResult.title.value}
-                </h6>
-                <p>
+                </h3>
+                <div>
                     ${data._highlightResult.altTitle.value}
-                </p>
+                </div>
               </div>
             </div>
-            <div class="text-muted small mt-1">
+            <div class="mt-2 overflow-auto">
               <img src="${data.imageUrl}" />
             </div>
             <div class="text-muted small mt-1">
-              <a href="https://www.xkcd.com/${data.id}" target="_blank" class="text-decoration-none">source</a>
+              <a href="https://www.xkcd.com/${data.id}" target="_blank" class="text-decoration-none">${data.publishDateYear}-${data.publishDateMonth}-${data.publishDateDay}</a>
             </div>
         `;
       },
       empty: 'No comics found for <q>{{ query }}</q>. Try another search term.',
       showMoreText: 'Show more comics',
-    },
-  }),
-  currentRefinements({
-    container: '#current-refinements',
-    cssClasses: {
-      list: 'list-unstyled',
-      item: 'h5 badge badge-dark mr-2 px-2',
-      delete: 'btn btn-sm btn-link text-decoration-none p-0 px-2',
-    },
-    transformItems: (items) => {
-      const labelLookup = {
-        publishDateYear: 'Year',
-        topics: 'Topic',
-      };
-      const modifiedItems = items.map((item) => {
-        return {
-          ...item,
-          label: labelLookup[item.attribute] || '',
-        };
-      });
-      return modifiedItems;
     },
   }),
   menu({
@@ -239,17 +218,17 @@ search.addWidgets([
     sortBy: ['name:desc'],
     cssClasses: {
       list: 'list-unstyled',
-      label: '',
+      label: 'text-dark',
       link: 'text-decoration-none',
       count: 'badge text-dark-2 ml-2',
-      selectedItem: 'pl-3',
+      selectedItem: 'bg-light pl-2',
     },
   }),
   refinementList({
     container: '#comic-topic',
     attribute: 'topics',
     searchable: true,
-    searchablePlaceholder: 'Search topics',
+    searchablePlaceholder: 'search topics',
     showMore: true,
     limit: 10,
     showMoreLimit: 50,
@@ -261,7 +240,7 @@ search.addWidgets([
       showMore: 'btn btn-secondary btn-sm',
       list: 'list-unstyled',
       count: 'badge text-dark-2 ml-2',
-      label: 'd-flex align-items-center',
+      label: 'd-flex align-items-center mb-1',
       checkbox: 'mr-2',
     },
   }),
@@ -271,9 +250,9 @@ search.addWidgets([
   sortBy({
     container: '#sort-by',
     items: [
-      { label: 'Recent first', value: `${INDEX_NAME}` },
+      { label: 'recent first', value: `${INDEX_NAME}` },
       {
-        label: 'Oldest first',
+        label: 'oldest first',
         value: `${INDEX_NAME}/sort/publishDateTimestamp:asc`,
       },
     ],

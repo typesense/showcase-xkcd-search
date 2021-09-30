@@ -64,6 +64,7 @@ module.exports = (async () => {
       { name: 'altTitle', type: 'string' },
       { name: 'publishDateYear', type: 'int32', facet: true },
       { name: 'publishDateMonth', type: 'int32', facet: true },
+      { name: 'publishDateDay', type: 'int32', facet: true },
       { name: 'publishDateTimestamp', type: 'int64', facet: true },
       { name: 'topics', type: 'string[]', facet: true },
       // { name: 'imageUrl'},

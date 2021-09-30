@@ -29,6 +29,7 @@ while ((dirent = dir.readSync()) !== null) {
       img: 'https://www.explainxkcd.com/wiki/images/9/92/not_found.png',
       month: '4',
       year: '2008',
+      day: '1',
       alt: '404 Not Found',
     }
   } else {
@@ -36,9 +37,10 @@ while ((dirent = dir.readSync()) !== null) {
   }
 
   const altTitle = xkcdInfo['alt']
-  const publishDateObject = DateTime.local(parseInt(xkcdInfo['year']), parseInt(xkcdInfo['month']));
+  const publishDateObject = DateTime.local(parseInt(xkcdInfo['year']), parseInt(xkcdInfo['month']), parseInt(xkcdInfo['day']));
   const publishDateYear = publishDateObject.year
   const publishDateMonth = publishDateObject.month
+  const publishDateDay = publishDateObject.day
   const publishDateTimestamp = publishDateObject.toSeconds()
   const topics = $('#catlinks ul li a').toArray().map(e => e.firstChild.nodeValue).slice(4) // First 4 are not topics
 
@@ -49,6 +51,7 @@ while ((dirent = dir.readSync()) !== null) {
     altTitle,
     publishDateYear,
     publishDateMonth,
+    publishDateDay,
     publishDateTimestamp,
     topics,
     imageUrl: xkcdInfo['img']

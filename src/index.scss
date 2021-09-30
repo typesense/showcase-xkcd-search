@@ -29,7 +29,7 @@ a.clickable-search-term {
 
 mark {
   color: unset;
-  background-color: rgba(darken($secondary, 5%), .7);
+  background-color: rgba($gray-200, .7);
   padding: 0 0.08em;
 }
 
