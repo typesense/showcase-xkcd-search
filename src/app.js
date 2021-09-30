@@ -192,10 +192,17 @@ search.addWidgets([
         return `
             <div class="row">
               <div class="col-12">
-                <h3 style="overflow-wrap: break-word;" class="text-secondary">
+                <h3 style="overflow-wrap: break-word;" class="text-secondary mb-1">
                   ${data._highlightResult.title.value}
                 </h3>
-                <div>
+                <div class="text-muted small">
+                  <a href="https://www.xkcd.com/${
+                    data.id
+                  }" target="_blank" class="text-decoration-none">${
+          data.publishDateYear
+        }-${data.publishDateMonth}-${data.publishDateDay}</a>
+                </div>
+                <div class="mt-2">
                     ${data._highlightResult.altTitle.value}
                 </div>
               </div>
@@ -204,7 +211,7 @@ search.addWidgets([
               <img src="${data.imageUrl}" />
             </div>
             <div class="text-muted small mt-1">
-              <a href="https://www.xkcd.com/${data.id}" target="_blank" class="text-decoration-none">${data.publishDateYear}-${data.publishDateMonth}-${data.publishDateDay}</a>
+                ${data.topics.join(' • ')}
             </div>
         `;
       },
