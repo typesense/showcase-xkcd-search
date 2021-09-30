@@ -184,7 +184,7 @@ search.addWidgets([
     cssClasses: {
       list: 'list-unstyled',
       item: 'd-flex flex-column search-result-card mb-5',
-      loadMore: 'btn btn-secondary mx-auto d-block mt-4',
+      loadMore: 'btn btn-secondary d-block mt-4',
       disabledLoadMore: 'btn btn-light mx-auto d-block mt-4',
     },
     templates: {
