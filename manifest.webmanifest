@@ -1,6 +1,6 @@
 {
-  "short_name": "linux-commit-history-search",
-  "name": "linux-commit-history-search Sample",
+  "short_name": "xkcd-search",
+  "name": "xkcd-search",
   "icons": [
     {
       "src": "favicon.png",

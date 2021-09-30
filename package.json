@@ -1,5 +1,5 @@
 {
-  "name": "linux-commit-history-search",
+  "name": "showcase-xkcd-search",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -10,9 +10,7 @@
     "fetchData": "node scripts/fetchExplainXkcdData.mjs && node scripts/fetchXkcdData.mjs",
     "transformData": "node scripts/transformData.mjs",
     "indexData": "node scripts/indexData.js",
-    "build": "parcel build index.html --public-url https://linux-commits-search.typesense.org",
-    "deploy": "rm -rf build && yarn build && aws s3 cp --recursive ./dist s3://linux-commits-search.typesense.org/ --profile typesense && yarn clearCDNCache",
-    "clearCDNCache": "aws cloudfront create-invalidation --distribution-id E1595BXBL5OB6C --paths \"/*\" --profile typesense"
+    "build": "parcel build index.html --public-url https://showcase-xkcd-search.typesense.org"
   },
   "engines": {
     "node": ">=14.0"
