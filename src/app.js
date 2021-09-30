@@ -231,7 +231,7 @@ search.addWidgets([
     searchablePlaceholder: 'search topics',
     showMore: true,
     limit: 10,
-    showMoreLimit: 50,
+    showMoreLimit: 100,
     operator: 'and',
     cssClasses: {
       searchableInput: 'form-control form-control-sm mb-2',
