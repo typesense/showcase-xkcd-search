@@ -15,7 +15,7 @@
     "clearCDNCache": "aws cloudfront create-invalidation --distribution-id E1595BXBL5OB6C --paths \"/*\" --profile typesense"
   },
   "engines": {
-    "node": ">=0.14"
+    "node": ">=14.0"
   },
   "devDependencies": {
     "babel-eslint": "10.1.0",
