@@ -115,8 +115,8 @@ const typesenseInstantsearchAdapter = new TypesenseInstantSearchAdapter({
   //  So you can pass any parameters supported by the search endpoint below.
   //  queryBy is required.
   additionalSearchParameters: {
-    queryBy: 'subject,body',
-    queryByWeights: '1,1',
+    queryBy: 'title,altTitle,topics,transcript',
+    queryByWeights: '240,120,60,30',
     dropTokensThreshold: 2,
     typoTokensThreshold: 2,
     numTypos: 1,
@@ -164,11 +164,11 @@ search.addWidgets([
       text: ({ nbHits, hasNoResults, hasOneResult, processingTimeMS }) => {
         let statsText = '';
         if (hasNoResults) {
-          statsText = 'no commits';
+          statsText = 'no comics';
         } else if (hasOneResult) {
-          statsText = '1 commit';
+          statsText = '1 comic';
         } else {
-          statsText = `${nbHits.toLocaleString()} commits`;
+          statsText = `${nbHits.toLocaleString()} comics`;
         }
         return `Found ${statsText} ${
           indexSize ? ` from ${indexSize.toLocaleString()}` : ''
@@ -183,7 +183,7 @@ search.addWidgets([
     container: '#hits',
     cssClasses: {
       list: 'list-unstyled',
-      item: 'd-flex flex-column search-result-card p-4 border border-dark mb-3',
+      item: 'd-flex flex-column search-result-card mb-5',
       loadMore: 'btn btn-primary mx-auto d-block mt-4',
       disabledLoadMore: 'btn btn-dark mx-auto d-block mt-4',
     },
@@ -193,56 +193,23 @@ search.addWidgets([
             <div class="row">
               <div class="col-11">
                 <h6 class="text-primary" style="overflow-wrap: break-word;">
-                  ${data._highlightResult.subject.value}
+                  ${data._highlightResult.title.value}
                 </h6>
-              </div>
-              <div class="col-1 text-right my-2 my-md-0">
-                <a role="button"
-                onclick="window.tweetSearchTerm(); event.preventDefault();"
-                data-commit-message="${data.subject}"
-                data-commit-sha="${data.sha}"
-                class="text-decoration-none text-white"
-                >Tweet</a>
+                <p>
+                    ${data._highlightResult.altTitle.value}
+                </p>
               </div>
             </div>
-            <div class="text-muted small">
-              Authored by ${data.author_name} • Committed by ${data.committer_name}
-            </div>
-            <div class="text-muted small mt-1" style="overflow-wrap: break-word;">
-              ${data.id} • <a href="https://github.com/torvalds/linux/commit/${data.id}" target="_blank">View Diff</a>
+            <div class="text-muted small mt-1">
+              <img src="${data.imageUrl}" />
             </div>
             <div class="text-muted small mt-1">
-              ${data.num_files_changed} file(s) changed,
-              ${data.num_insertions} insertion(s),
-              ${data.num_deletions} deletion(s)
-            </div>
-            <div class="text-muted small mt-1">
-              ${data.author_date}
-            </div>
-
-            <div class="mt-4" style="overflow-wrap: break-word;">
-              ${data.transformedBody}
+              <a href="https://www.xkcd.com/${data.id}" target="_blank" class="text-decoration-none">source</a>
             </div>
         `;
       },
-      empty:
-        'No commits found for <q>{{ query }}</q>. Try another search term.',
-      showMoreText: 'Show more commits',
-    },
-    transformItems: (items) => {
-      return items.map((item) => {
-        return {
-          ...item,
-          transformedBody: item._highlightResult.body.value
-            .replace(/\n\n/g, '\n')
-            .split('\n')
-            .join('<br/>'),
-          author_date: (() => {
-            const parsedDate = new Date(item.author_timestamp * 1000);
-            return parsedDate.toDateString();
-          })(),
-        };
-      });
+      empty: 'No comics found for <q>{{ query }}</q>. Try another search term.',
+      showMoreText: 'Show more comics',
     },
   }),
   currentRefinements({
@@ -254,15 +221,8 @@ search.addWidgets([
     },
     transformItems: (items) => {
       const labelLookup = {
-        author_email_domain: 'Author',
-        author_name: 'Author',
-        author_timestamp_year: 'Year',
-        committer_email_domain: 'Committer',
-        committer_name: 'Committer',
-        num_insertions: 'Insertions',
-        num_deletions: 'Deletions',
-        num_files_changed: 'Files',
-        is_merge: 'Merge Commits',
+        publishDateYear: 'Year',
+        topics: 'Topic',
       };
       const modifiedItems = items.map((item) => {
         return {
@@ -274,39 +234,28 @@ search.addWidgets([
     },
   }),
   menu({
-    container: '#author-timestamp-year-date-selector',
-    attribute: 'author_timestamp_year',
+    container: '#comic-publication-year',
+    attribute: 'publishDateYear',
     sortBy: ['name:desc'],
     cssClasses: {
       list: 'list-unstyled',
-      label: 'text-white',
+      label: '',
       link: 'text-decoration-none',
       count: 'badge text-dark-2 ml-2',
       selectedItem: 'pl-3',
     },
   }),
-  toggleRefinement({
-    container: '#exclude-merge-commits-toggle-refinement',
-    attribute: 'is_merge',
-    on: 'false',
-    templates: {
-      labelText: 'Exclude',
-    },
-    cssClasses: {
-      label: 'd-flex align-items-center',
-      checkbox: 'mr-2',
-    },
-  }),
   refinementList({
-    container: '#author-email-domain-refinement-list',
-    attribute: 'author_email_domain',
+    container: '#comic-topic',
+    attribute: 'topics',
     searchable: true,
-    searchablePlaceholder: 'Search author email domain',
+    searchablePlaceholder: 'Search topics',
     showMore: true,
-    limit: 5,
+    limit: 10,
+    showMoreLimit: 50,
+    operator: 'and',
     cssClasses: {
-      searchableInput:
-        'form-control form-control-sm form-control-secondary mb-2 border-light-2',
+      searchableInput: 'form-control form-control-sm mb-2',
       searchableSubmit: 'd-none',
       searchableReset: 'd-none',
       showMore: 'btn btn-secondary btn-sm',
@@ -314,96 +263,6 @@ search.addWidgets([
       count: 'badge text-dark-2 ml-2',
       label: 'd-flex align-items-center',
       checkbox: 'mr-2',
-    },
-  }),
-  refinementList({
-    container: '#author-name-refinement-list',
-    attribute: 'author_name',
-    searchable: true,
-    searchablePlaceholder: 'Search author name',
-    showMore: true,
-    limit: 5,
-    cssClasses: {
-      searchableInput:
-        'form-control form-control-sm form-control-secondary mb-2 border-light-2',
-      searchableSubmit: 'd-none',
-      searchableReset: 'd-none',
-      showMore: 'btn btn-secondary btn-sm align-content-center',
-      list: 'list-unstyled',
-      count: 'badge text-dark-2 ml-2',
-      label: 'd-flex align-items-center',
-      checkbox: 'mr-2',
-    },
-  }),
-  refinementList({
-    container: '#committer-name-refinement-list',
-    attribute: 'committer_name',
-    searchable: true,
-    searchablePlaceholder: 'Search committer name',
-    showMore: true,
-    limit: 5,
-    cssClasses: {
-      searchableInput:
-        'form-control form-control-sm form-control-secondary mb-2 border-light-2',
-      searchableSubmit: 'd-none',
-      searchableReset: 'd-none',
-      showMore: 'btn btn-secondary btn-sm',
-      list: 'list-unstyled',
-      count: 'badge text-dark-2 ml-2',
-      label: 'd-flex align-items-center',
-      checkbox: 'mr-2',
-    },
-  }),
-  refinementList({
-    container: '#committer-email-domain-refinement-list',
-    attribute: 'committer_email_domain',
-    searchable: true,
-    searchablePlaceholder: 'Search committer email domain',
-    showMore: true,
-    limit: 5,
-    cssClasses: {
-      searchableInput:
-        'form-control form-control-sm form-control-secondary mb-2 border-light-2',
-      searchableSubmit: 'd-none',
-      searchableReset: 'd-none',
-      showMore: 'btn btn-secondary btn-sm',
-      list: 'list-unstyled',
-      count: 'badge text-dark-2 ml-2',
-      label: 'd-flex align-items-center',
-      checkbox: 'mr-2',
-    },
-  }),
-  rangeInput({
-    container: '#files-changed-range-input',
-    attribute: 'num_files_changed',
-    cssClasses: {
-      form: 'form',
-      input: 'form-control form-control-sm form-control-secondary',
-      submit:
-        'btn btn-sm btn-secondary ml-2 border border-secondary border-width-2',
-      separator: 'text-muted mx-2',
-    },
-  }),
-  rangeInput({
-    container: '#commit-insertions-range-input',
-    attribute: 'num_insertions',
-    cssClasses: {
-      form: 'form',
-      input: 'form-control form-control-sm form-control-secondary',
-      submit:
-        'btn btn-sm btn-secondary ml-2 border border-secondary border-width-2',
-      separator: 'text-muted mx-2',
-    },
-  }),
-  rangeInput({
-    container: '#commit-deletions-range-input',
-    attribute: 'num_deletions',
-    cssClasses: {
-      form: 'form',
-      input: 'form-control form-control-sm form-control-secondary',
-      submit:
-        'btn btn-sm btn-secondary ml-2 border border-secondary border-width-2',
-      separator: 'text-muted mx-2',
     },
   }),
   configure({
@@ -415,7 +274,7 @@ search.addWidgets([
       { label: 'Recent first', value: `${INDEX_NAME}` },
       {
         label: 'Oldest first',
-        value: `${INDEX_NAME}/sort/author_timestamp_year:asc`,
+        value: `${INDEX_NAME}/sort/publishDateTimestamp:asc`,
       },
     ],
     cssClasses: {

@@ -11,7 +11,7 @@
 
   <link rel="stylesheet" href="./src/index.scss">
 
-  <title>Linux Kernel Commit History Search with Typesense</title>
+  <title>xkcd search with Typesense</title>
   <meta name="description"
         content="Search through commits from the Linux Kernel git repository instantly with Typesense. Celebrating 30 Years of Linux and 1 Million Linux Kernel Commits.">
   <meta name="keywords" content="linux, git commit history, search, search engine, typesense, search linux kernel, #TuxTurns30, #30YearsOfLinux" />
@@ -40,34 +40,24 @@
 
     gtag('js', new Date());
 
-    gtag('config', 'UA-116415641-8');
+    gtag('config', 'UA-116415641-10');
   </script>
 </head>
 
 <body>
-<div class="bg-dark text-center py-1">
-  Celebrating Linux's 30th Anniversary & 1 Million Linux Kernel Commits! 🎉
-  <a role="button" data-toggle="modal" data-target="#aboutModal" class="small">
-    Learn More
-  </a>
-</div>
-
 <div class="container-fluid px-md-5 pt-4">
   <div class="row d-flex align-items-center">
     <div class="col-md">
       <h1 class="font-letter-spacing-tight">
-        Search 1 Million Linux Kernel Commit Messages
+        xkcd search
       </h1>
       <p class="text-muted">
-        Find any interesting search queries?
-        <a role="button" onclick="window.tweetSearchTerm(); event.preventDefault();" class="text-secondary">Tweet</a>
-        it with #TuxTurns30 #LinuxCommitMessages and we'll add it below •
         <a role="button" data-toggle="modal" data-target="#aboutModal">About</a> •
-        <a href="https://github.com/typesense/showcase-linux-commits-search" target="_blank">Source Code</a>
+        <a href="https://github.com/typesense/showcase-xkcd-search" target="_blank">Source Code</a>
       </p>
     </div>
     <div class="col-md-2 d-none d-md-block text-md-right">
-      <img src="images/linux_tux.svg" height="120" width="109" alt="Linux Tux" />
+      <img src="https://xkcd.com/s/0b7742.png" height="83" width="185" alt="xkcd" />
     </div>
   </div>
 
@@ -94,7 +84,7 @@
           <div>Search powered by</div>
           <div>
             <a href="https://github.com/typesense/typesense" target="_blank" alt="Typesense">
-              <img src="images/typesense_terminal_white.svg" width="114" height="25" />
+              <img src="images/typesense.svg" width="114" height="25" />
             </a>
           </div>
         </div>
@@ -133,62 +123,15 @@
 
             <div class="row">
               <div class="col-md">
-                <h6 class="text-secondary">Commit Year</h6>
-                <div id="author-timestamp-year-date-selector"></div>
+                <h6 class="text-secondary">Topic</h6>
+                <div id="comic-topic"></div>
               </div>
             </div>
-            <div class="row mt-3">
-              <div class="col-md">
-                <h6 class="text-secondary">Merge Commits</h6>
-                <div id="exclude-merge-commits-toggle-refinement"></div>
-              </div>
-            </div>
+
             <div class="row mt-4">
               <div class="col-md">
-                <h6 class="text-secondary">Author Email Domain</h6>
-                <div id="author-email-domain-refinement-list"></div>
-                <div class="text-muted small mt-3 pr-md-5">
-                  Note: Some kernel authors use their personal email addresses predominantly.
-                </div>
-              </div>
-            </div>
-            <div class="row mt-5">
-              <div class="col-md">
-                <h6 class="text-secondary">Author Name</h6>
-                <div id="author-name-refinement-list"></div>
-              </div>
-            </div>
-            <div class="row mt-5">
-              <div class="col-md">
-                <h6 class="text-secondary">Committer Name</h6>
-                <div id="committer-name-refinement-list"></div>
-              </div>
-            </div>
-            <div class="row mt-5">
-              <div class="col-md">
-                <h6 class="text-secondary">Committer Email Domain</h6>
-                <div id="committer-email-domain-refinement-list"></div>
-                <div class="text-muted small mt-3 pr-md-5">
-                  Note: Some kernel committers use their personal email addresses predominantly.
-                </div>
-              </div>
-            </div>
-            <div class="row mt-5">
-              <div class="col-md">
-                <h6 class="text-secondary">Number of Files Changed</h6>
-                <div id="files-changed-range-input"></div>
-              </div>
-            </div>
-            <div class="row mt-5">
-              <div class="col-md">
-                <h6 class="text-secondary">Commit Insertions</h6>
-                <div id="commit-insertions-range-input"></div>
-              </div>
-            </div>
-            <div class="row mt-5">
-              <div class="col-md">
-                <h6 class="text-secondary">Commit Deletions</h6>
-                <div id="commit-deletions-range-input"></div>
+                <h6 class="text-secondary">Publication Year</h6>
+                <div id="comic-publication-year"></div>
               </div>
             </div>
           </div>

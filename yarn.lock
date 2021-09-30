@@ -6095,10 +6095,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typesense-instantsearch-adapter@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/typesense-instantsearch-adapter/-/typesense-instantsearch-adapter-2.1.0.tgz#9d9347db8caa95a0c6853edda91c664d3daaf46b"
-  integrity sha512-xh/ObaaRcGnwX1814eaL/cde49PkL1FKAzF0Db4JMbn1ck1/4s9CJydDmw1ibFBfmfdZqqltiIxVUjZSHC8NMg==
+typesense-instantsearch-adapter@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/typesense-instantsearch-adapter/-/typesense-instantsearch-adapter-2.1.1.tgz#a35c269747a986d8b73161ab5892ac3f939e9985"
+  integrity sha512-HsqjN4DzsUi1AoxRXPrNRmO7GsnndsOBLlU2sXlPW7D0gcKb8mFucTiXbNMtw7oAbg6FkyfRfK92BOBZohuTdw==
   dependencies:
     typesense "^0.14.0"
 
