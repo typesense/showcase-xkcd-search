@@ -1,26 +1,22 @@
 # xkcd search
 
-This is a demo that showcases some of Typesense's features using 1 Million commit messages from the Linux kernel [repo](https://github.com/torvalds/linux).
+This is a demo that showcases some of Typesense's features using [xkcd](https://xkcd.com/) comics and metadata from [explain xkcd](https://www.explainxkcd.com/).
 
-View it live here: https://linux-commits-search.typesense.org/
+View it live here: https://xkcd-search.typesense.org/
 
 # Tech Stack
 
 This search experience is powered by Typesense which is a fast, open source typo-tolerant search-engine. It is an open source alternative to Algolia and an easier-to-use alternative to ElasticSearch.
 
-The dataset was extracted by running `git log` on the Linux Kernel git repo.
+The app was built using the [Typesense Adapter for InstantSearch.js](https://github.com/typesense/typesense-instantsearch-adapter) and is hosted on Cloudflare Pages.
 
-The dataset is ~950MB on disk, with ~1 million records. It took 45 minutes to index this dataset on a 3-node Typesense cluster with 4vCPUs per node and the index was ~3GB in RAM.
-
-The app was built using the [Typesense Adapter for InstantSearch.js](https://github.com/typesense/typesense-instantsearch-adapter) and is hosted on S3, with CloudFront for a CDN.
-
-The search backend is powered by a geo-distributed 3-node Typesense cluster running on [Typesense Cloud](https://cloud.typesense.org), with nodes in Oregon, Frankfurt and Mumbai.
+The search/browsing backend is powered by a geo-distributed 3-node Typesense cluster running on [Typesense Cloud](https://cloud.typesense.org), with nodes in Oregon, Frankfurt and Mumbai.
 
 
 ## Repo structure
 
 - `src/` and `index.html` - contain the frontend UI components, built with <a href="https://github.com/typesense/typesense-instantsearch-adapter" target="_blank">Typesense Adapter for InstantSearch.js</a>
-- `scripts/` - contains the scripts to extract, transform and index the git log data into Typesense.
+- `scripts/` - contains the scripts to extract, transform and index the data into Typesense.
 
 ## Development
 

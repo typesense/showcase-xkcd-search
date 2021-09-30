@@ -149,27 +149,23 @@
       </div>
       <div class="modal-body">
         <p>
-          The <a href="https://github.com/torvalds/linux">Linux Kernel</a> we all know and use, <a
-          href="https://www.linuxfoundation.org/en/linux30th/" target="_blank">turned 30 years</a> in 2021
-          and also recently crossed 1 Million commits, after switching to git for a version control system. 🎉
+          The search & browsing experience is powered by <a href="https://typesense.org" target="_blank">Typesense</a> which is
+          a fast, <a href="https://github.com/typesense/typesense" target="_blank">open source</a> typo-tolerant
+          search-engine. It is an open source alternative to Algolia and an easier-to-use alternative to
+          ElasticSearch.
         </p>
         <p>
-          This site was built by the <a href="https://typesense.org">Typesense</a> team as a tribute to all the hard
-          work that went into building a piece of software that powers a good chunk of the world today.
-          Thank you Linux Kernel Team! 🙏🏻🍻
+          The data is from <a href="https://www.explainxkcd.com/" target="_blank">explainxkcd.com</a>
+          and <a href="https://xkcd.com/" target="_blank">xkcd.com</a> and is indexed in Typesense.
         </p>
         <p>
-          Some technical details:</p>
+          Some technical details:
+        </p>
         <ul>
-          <li>The search experience is powered by <a href="https://typesense.org" target="_blank">Typesense</a> which is
-            a fast, <a href="https://github.com/typesense/typesense" target="_blank">open source</a> typo-tolerant
-            search-engine. It is an open source alternative to Algolia and an easier-to-use alternative to
-            ElasticSearch.
-          </li>
           <li>
             The app was built using the <a href="https://github.com/typesense/typesense-instantsearch-adapter"
                                            target="_blank">
-            Typesense Adapter for InstantSearch.js</a> and is hosted on AWS S3 with Cloudfront for a CDN.
+            Typesense Adapter for InstantSearch.js</a> and is hosted on Cloudflare Pages.
           </li>
           <li>
             The search backend is powered by a geo-distributed 3-node Typesense cluster running on <a
@@ -177,15 +173,10 @@
             with nodes in Oregon, Frankfurt and Mumbai.
           </li>
           <li>
-            Here is the source-code for this site: <a
-            href="https://github.com/typesense/showcase-linux-commits-search" target="_blank">https://github.com/typesense/showcase-linux-commits-search</a>
+            Here is the source-code: <a
+            href="https://github.com/typesense/showcase-xkcd-search" target="_blank">https://github.com/typesense/showcase-xkcd-search</a>
           </li>
         </ul>
-        <p>
-          We're sure there some interesting nuggets buried in the commit messages. If you find something interesting,
-          <a role="button" onclick="window.tweetSearchTerm(); event.preventDefault();">Tweet</a>
-          it with #TuxTurns30 #LinuxCommitMessages and we'll add it to the list on the site.
-        </p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
