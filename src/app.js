@@ -193,7 +193,7 @@ search.addWidgets([
             <div class="row">
               <div class="col-12">
                 <h3 style="overflow-wrap: break-word;" class="text-secondary mb-1">
-                  ${data._highlightResult.title.value}
+                  ${data.title}
                 </h3>
                 <div class="text-muted small">
                   <a href="https://www.xkcd.com/${
@@ -202,13 +202,13 @@ search.addWidgets([
           data.publishDateYear
         }-${data.publishDateMonth}-${data.publishDateDay}</a>
                 </div>
-                <div class="mt-2">
-                    ${data._highlightResult.altTitle.value}
-                </div>
               </div>
             </div>
             <div class="mt-2 overflow-auto">
               <img src="${data.imageUrl}" />
+            </div>
+            <div class="mt-2 overflow-auto">
+              ${data.altTitle}
             </div>
             <div class="text-muted small mt-1">
                 ${data.topics.join(' • ')}
