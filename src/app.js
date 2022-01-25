@@ -257,7 +257,14 @@ search.addWidgets([
   sortBy({
     container: '#sort-by',
     items: [
-      { label: 'recent first', value: `${INDEX_NAME}` },
+      {
+        label: 'relevancy',
+        value: INDEX_NAME,
+      },
+      {
+        label: 'recent first',
+        value: `${INDEX_NAME}/sort/publishDateTimestamp:desc`,
+      },
       {
         label: 'oldest first',
         value: `${INDEX_NAME}/sort/publishDateTimestamp:asc`,
