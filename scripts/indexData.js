@@ -128,4 +128,21 @@ module.exports = (async () => {
   } catch (error) {
     console.error(error);
   }
+
+  // Add synonyms
+  // console.log('Adding synonyms...');
+  // const synonyms = [
+  //   {
+  //     synonyms: ['regex', 'regular expression', 'regular expression'],
+  //   },
+  // ];
+  //
+  // for (const synonym of synonyms) {
+  //   await typesense
+  //     .collections('xkcd')
+  //     .synonyms()
+  //     .upsert(synonym.synonyms[0], synonym);
+  // }
+  //
+  // console.log('✅');
 })();
