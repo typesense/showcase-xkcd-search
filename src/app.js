@@ -205,6 +205,9 @@ search.addWidgets([
                   • <a class="btn-copy-to-clipboard text-decoration-none" href="#" data-link="https://www.xkcd.com/${
                     data.id
                   }">Copy to Clipboard</a>
+                  • <a class="text-decoration-none" target="_blank" href="https://www.explainxkcd.com/wiki/index.php/${
+                    data.id
+                  }">Explain</a>
                 </div>
               </div>
             </div>
