@@ -23,6 +23,7 @@ import TypesenseInstantSearchAdapter from 'typesense-instantsearch-adapter';
 import { SearchClient as TypesenseSearchClient } from 'typesense'; // To get the total number of docs
 import images from '../images/*.*';
 import STOP_WORDS from './utils/stop_words.json';
+import copyToClipboard from 'copy-to-clipboard';
 
 let TYPESENSE_SERVER_CONFIG = {
   apiKey: process.env.TYPESENSE_SEARCH_ONLY_API_KEY, // Be sure to use an API key that only allows searches, in production
@@ -201,6 +202,9 @@ search.addWidgets([
                   }" target="_blank" class="text-decoration-none">${
           data.publishDateYear
         }-${data.publishDateMonth}-${data.publishDateDay}</a>
+                  • <a class="btn-copy-to-clipboard text-decoration-none" href="#" data-link="https://www.xkcd.com/${
+                    data.id
+                  }">Copy to Clipboard</a>
                 </div>
               </div>
             </div>
@@ -276,6 +280,13 @@ search.addWidgets([
   }),
 ]);
 
+search.start();
+
+search.on('render', function () {
+  // Copy-to-Clipboard event handler
+  $('.btn-copy-to-clipboard').on('click', handleCopyToClipboard);
+});
+
 function handleSearchTermClick(event) {
   const $searchBox = $('#searchbox input[type=search]');
   search.helper.clearRefinements();
@@ -284,23 +295,26 @@ function handleSearchTermClick(event) {
   search.helper.setQuery($searchBox.val()).search();
 }
 
-search.start();
+function handleCopyToClipboard() {
+  copyToClipboard($(this).data('link'), {
+    debug: true,
+    message: 'Press #{key} to copy',
+  });
+
+  $(this).text('Done');
+
+  setTimeout(() => {
+    $(this).text('Copy to clipboard');
+  }, 2000);
+
+  return false;
+}
 
 $(async function () {
   const $searchBox = $('#searchbox input[type=search]');
-  // Set initial search term
-  // if ($searchBox.val().trim() === '') {
-  //   $searchBox.val('device driver');
-  //   search.helper.setQuery($searchBox.val()).search();
-  // }
 
   // Handle example search terms
   $('.clickable-search-term').on('click', handleSearchTermClick);
-
-  // Clear refinements, when searching
-  // $searchBox.on('keydown', (event) => {
-  //   search.helper.clearRefinements();
-  // });
 
   if (!matchMedia('(min-width: 768px)').matches) {
     $searchBox.on('focus keydown change input', () => {
@@ -313,21 +327,4 @@ $(async function () {
       );
     });
   }
-
-  window.tweetSearchTerm = function () {
-    const currentSearchTerm = $('#searchbox input[type=search]').val().trim();
-    let text = `Found an interesting tidbit searching for "${currentSearchTerm}" in #LinuxCommitMessages via @typesense\n\n${window.location}\n\n#TuxTurns30 #30YearsOfLinux`;
-
-    if (currentSearchTerm === '') {
-      text = `Search for interesting commit messages in the Linux Kernel via @typesense\n\nhttps://linux-commits-search.typesense.org\n\n#TuxTurns30 #30YearsOfLinux #LinuxCommitMessages`;
-    }
-
-    const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      text
-    )}`;
-
-    window.location = tweetUrl;
-
-    return false;
-  };
 });
