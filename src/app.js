@@ -117,7 +117,7 @@ const typesenseInstantsearchAdapter = new TypesenseInstantSearchAdapter({
   //  queryBy is required.
   additionalSearchParameters: {
     queryBy: 'title,altTitle,topics,transcript',
-    queryByWeights: '240,120,60,30',
+    queryByWeights: '127,80,60,20',
     dropTokensThreshold: 2,
     typoTokensThreshold: 2,
     numTypos: 1,
