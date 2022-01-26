@@ -315,16 +315,4 @@ $(async function () {
 
   // Handle example search terms
   $('.clickable-search-term').on('click', handleSearchTermClick);
-
-  if (!matchMedia('(min-width: 768px)').matches) {
-    $searchBox.on('focus keydown change input', () => {
-      console.log('change');
-      $('html, body').animate(
-        {
-          scrollTop: $('#searchbox-container').offset().top,
-        },
-        500
-      );
-    });
-  }
 });
