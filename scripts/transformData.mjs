@@ -54,6 +54,7 @@ while ((dirent = dir.readSync()) !== null) {
   const publishDateDay = publishDateObject.day
   const publishDateTimestamp = publishDateObject.toSeconds()
   const topics = $('#catlinks ul li a').toArray().map(e => e.firstChild.nodeValue).slice(4) // First 4 are not topics
+  const normalizedTopics = topics.map(t => t.replace(/^Comics featuring /g, ''))
 
   const record = {
     id,
@@ -64,7 +65,7 @@ while ((dirent = dir.readSync()) !== null) {
     publishDateMonth,
     publishDateDay,
     publishDateTimestamp,
-    topics,
+    topics: normalizedTopics,
     imageUrl: xkcdInfo['img']
   }
   transformedDataWriteStream.write(JSON.stringify(record) + "\n")
