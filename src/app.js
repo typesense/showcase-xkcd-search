@@ -218,7 +218,12 @@ search.addWidgets([
               ${data.altTitle}
             </div>
             <div class="text-muted small mt-1">
-                ${data.topics.join(' • ')}
+                ${data.topics
+                  .map(
+                    (t) =>
+                      `<a href="#" class="topic text-decoration-none">${t}</a>`
+                  )
+                  .join(' • ')}
             </div>
         `;
       },
@@ -288,6 +293,7 @@ search.start();
 search.on('render', function () {
   // Copy-to-Clipboard event handler
   $('.btn-copy-to-clipboard').on('click', handleCopyToClipboard);
+  $('.topic').on('click', handleTopicClick);
 });
 
 function handleSearchTermClick(event) {
@@ -296,6 +302,23 @@ function handleSearchTermClick(event) {
   $searchBox.val(event.currentTarget.textContent);
   $searchBox.trigger('change');
   search.helper.setQuery($searchBox.val()).search();
+  return false;
+}
+
+function handleTopicClick(event) {
+  search.helper.clearRefinements();
+  search.renderState[INDEX_NAME].refinementList.topics.refine(
+    event.currentTarget.textContent
+  );
+  setTimeout(() => {
+    $('html, body').animate(
+      {
+        scrollTop: $('#searchbox-container').offset().top,
+      },
+      200
+    );
+  }, 200);
+  return false;
 }
 
 function handleCopyToClipboard() {

@@ -25,6 +25,10 @@ a.clickable-search-term {
   -webkit-text-decoration-line: underline;
   -webkit-text-decoration-color: $gray-500;
   cursor: pointer;
+
+  &:hover {
+    color: darken($link-color, 50%);
+  }
 }
 
 mark {

@@ -55,6 +55,8 @@ $badge-padding-y: 0.75em;
 $enable-rounded: false;
 $enable-responsive-font-sizes: true;
 
+$link-hover-color: darken($link-color, 50%);
+
 @import "~bootstrap/scss/bootstrap";
 
 .font-letter-spacing-tight {
