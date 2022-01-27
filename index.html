@@ -11,26 +11,26 @@
 
   <link rel="stylesheet" href="./src/index.scss">
 
-  <title>xkcd search with typesense</title>
+  <title>findxkcd: find that perfect xkcd comic by topic</title>
   <meta name="description"
-        content="Browse and search through xkcd comics by topic.">
-  <meta name="keywords" content="xkcd, search, search engine, typesense" />
+        content="Want to find that perfect xkcd comic for your situation? Browse and search xkcd by topics, keywords, characters, transcript, date and more.">
+  <meta name="keywords" content="xkcd, search xkcd, find xkcd, browse xkcd, search engine, typesense" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://xkcd-search.typesense.org">
-  <meta property="og:title" content="Instantly Search xkcd Comics with Typesense">
+  <meta property="og:url" content="https://findxkcd.com">
+  <meta property="og:title" content="findxkcd">
   <meta name="og:description"
-        content="Instantly Search and Browse xkcd Comics by topic and keywords with Typesense." />
+        content="Find that perfect xkcd comic for your situation. Browse and search xkcd by topics, keywords, characters, transcript, date and more." />
   <meta property="og:image" content="./images/opengraph_banner.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Instantly Search xkcd Comics with Typesense">
-  <meta name="twitter:description" content="Instantly Search and Browse xkcd Comics by topic and keywords with Typesense.">
+  <meta name="twitter:title" content="findxkcd">
+  <meta name="twitter:description" content="Find that perfect xkcd comic for your situation. Browse and search xkcd by topics, keywords, characters, transcript, date and more.">
   <meta name="twitter:image" content="./images/opengraph_banner.png">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116415641-8"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116415641-10"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -48,22 +48,32 @@
 <div class="container-fluid px-md-5 pt-4">
   <div class="row d-flex align-items-center">
     <div class="col-md">
-      <h1 class="text-secondary">
-        instantly search & browse xkcd
-      </h1>
-      <div class="mb-3">
-        <span>powered by</span>
+
+      <div class="row">
+        <div class="col-md">
+          <h1 class="text-secondary mb-1">
+            findxkcd
+          </h1>
+          <div class="lead mb-3">
+            Browse and search xkcd comics by topics, keywords, characters, transcript, date and more.
+          </div>
+        </div>
+        <div class="col-md-2 d-none text-md-right d-md-flex flex-column align-self-center">
+          <img src="https://xkcd.com/s/0b7742.png" height="83" width="185" alt="xkcd" />
+        </div>
+      </div>
+
+      <div class="mb-3 d-flex align-items-center">
+        <span class="mr-2">powered by</span>
         <a href="https://github.com/typesense/typesense" target="_blank" alt="Typesense">
           <img src="images/typesense.svg" width="114" height="25" />
         </a>
       </div>
+
       <p class="text-muted">
         <a role="button" data-toggle="modal" data-target="#aboutModal">about</a> •
         <a href="https://github.com/typesense/showcase-xkcd-search" target="_blank">source code</a>
       </p>
-    </div>
-    <div class="col-md-2 d-none d-md-block text-md-right">
-      <img src="https://xkcd.com/s/0b7742.png" height="83" width="185" alt="xkcd" />
     </div>
   </div>
 
@@ -116,7 +126,7 @@
           <div class="collapse navbar-collapse d-md-block mt-3 mt-md-0" id="filters-section">
             <div class="row">
               <div class="col-md">
-                <h5 class="text-secondary mb-2">topic</h5>
+                <h5 class="text-secondary mb-2">browse by topic</h5>
                 <div id="comic-topic"></div>
               </div>
             </div>
@@ -152,14 +162,19 @@
       </div>
       <div class="modal-body">
         <p>
+          Ever wanted to browse all xkcd comics in a certain topic, or see all comics with a certain character,
+          in your quest to find the perfect xkcd for your situation?
+          This site is for you.
+        </p>
+        <p>
+          The underlying data is from <a href="https://www.explainxkcd.com/" target="_blank">explainxkcd.com</a>
+          and <a href="https://xkcd.com/" target="_blank">xkcd.com</a>.
+        </p>
+        <p>
           The search & browsing experience is powered by <a href="https://typesense.org" target="_blank">Typesense</a> which is
           a fast, <a href="https://github.com/typesense/typesense" target="_blank">open source</a> typo-tolerant
           search-engine. It is an open source alternative to Algolia and an easier-to-use alternative to
           ElasticSearch.
-        </p>
-        <p>
-          The data is from <a href="https://www.explainxkcd.com/" target="_blank">explainxkcd.com</a>
-          and <a href="https://xkcd.com/" target="_blank">xkcd.com</a> and is indexed in Typesense.
         </p>
         <p>
           Some technical details:

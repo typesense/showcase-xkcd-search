@@ -2,7 +2,7 @@
 
 This is a demo that showcases some of Typesense's features using [xkcd](https://xkcd.com/) comics and metadata from [explain xkcd](https://www.explainxkcd.com/).
 
-View it live here: https://xkcd-search.typesense.org/
+View it live here: https://findxkcd.com/
 
 # Tech Stack
 
