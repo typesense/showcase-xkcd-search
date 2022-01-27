@@ -43,11 +43,12 @@ while ((dirent = dir.readSync()) !== null) {
   const publishDateDay = publishDateObject.day
   const publishDateTimestamp = publishDateObject.toSeconds()
   const topics = $('#catlinks ul li a').toArray().map(e => e.firstChild.nodeValue).slice(4) // First 4 are not topics
+  const cleanedTranscript = transcript.replace(/\s*\[.*?\]\s*/g, ''); // Remove explainers within [...] since it throws off relevancy
 
   const record = {
     id,
     title,
-    transcript,
+    transcript: cleanedTranscript,
     altTitle,
     publishDateYear,
     publishDateMonth,
