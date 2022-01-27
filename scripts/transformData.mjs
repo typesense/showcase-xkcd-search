@@ -21,7 +21,14 @@ while ((dirent = dir.readSync()) !== null) {
   const [id, title] = $('#firstHeading').text().split(': ')
 
   const xkcdInfoContents = fs.readFileSync(path.resolve(DATA_DIR, `${id}.json`)).toString();
-  const transcript = $('#Transcript').parent().next().text()
+  let transcript = ''
+
+  // Read all text in <dl> elements after h1#Transcript
+  let currentDomElement = $('#Transcript').parent().next();
+  while(currentDomElement.length > 0 && currentDomElement.prop('tagName') === 'DL') {
+    transcript += currentDomElement.text();
+    currentDomElement = currentDomElement.next();
+  }
 
   let xkcdInfo
   if (id === '404') {
