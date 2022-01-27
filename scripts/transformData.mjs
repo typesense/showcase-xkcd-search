@@ -26,7 +26,11 @@ while ((dirent = dir.readSync()) !== null) {
   // Read all text in <dl> elements after h1#Transcript
   let currentDomElement = $('#Transcript').parent().next();
   while(currentDomElement.length > 0 && currentDomElement.prop('tagName') === 'DL') {
-    transcript += currentDomElement.text();
+    transcript += currentDomElement.text()
+      .replace(/^|\n\b.*?\b: /g, " ") // Remove Speaker Names that have the pattern "Speaker: " since it throws off relevancy
+      .replace(/\s*\[.*?\]\s*/g, '') // Remove explainers within [...] since it throws off relevancy
+      .trim()
+      + ' ';
     currentDomElement = currentDomElement.next();
   }
 
@@ -50,12 +54,11 @@ while ((dirent = dir.readSync()) !== null) {
   const publishDateDay = publishDateObject.day
   const publishDateTimestamp = publishDateObject.toSeconds()
   const topics = $('#catlinks ul li a').toArray().map(e => e.firstChild.nodeValue).slice(4) // First 4 are not topics
-  const cleanedTranscript = transcript.replace(/\s*\[.*?\]\s*/g, ''); // Remove explainers within [...] since it throws off relevancy
 
   const record = {
     id,
     title,
-    transcript: cleanedTranscript,
+    transcript,
     altTitle,
     publishDateYear,
     publishDateMonth,
