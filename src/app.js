@@ -119,7 +119,7 @@ const typesenseInstantsearchAdapter = new TypesenseInstantSearchAdapter({
     queryBy: 'title,altTitle,transcript,topics',
     queryByWeights: '127,80,80,1',
     dropTokensThreshold: 2,
-    typoTokensThreshold: 2,
+    typoTokensThreshold: 0,
     numTypos: 1,
   },
 });
