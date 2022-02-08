@@ -103,16 +103,14 @@ module.exports = (async () => {
 
   if (records.length > 0) {
     await addRecordsToTypesense(records, typesense, collectionName);
-    console.log('✅');
+    console.log(' Last Remaining Lines ✅');
   }
 
   let oldCollectionName;
   try {
-    oldCollectionName = await typesense.aliases('xkcd').retrieve()[
-      'collection_name'
-    ];
+    oldCollectionName = (await typesense.aliases('xkcd').retrieve())['collection_name'];
   } catch (error) {
-    // Do nothing
+    console.warn(error);
   }
 
   try {
