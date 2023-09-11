@@ -63,10 +63,19 @@ module.exports = (async () => {
       { name: 'transcript', type: 'string' },
       { name: 'altTitle', type: 'string' },
       { name: 'publishDateYear', type: 'int32', facet: true },
-      { name: 'publishDateMonth', type: 'int32', facet: true },
-      { name: 'publishDateDay', type: 'int32', facet: true },
       { name: 'publishDateTimestamp', type: 'int64', facet: true },
       { name: 'topics', type: 'string[]', facet: true },
+      // {
+      //   name: 'embedding',
+      //   type: 'float[]',
+      //   embed: {
+      //     from: ['title', 'transcript', 'altTitle', 'topics'],
+      //     model_config: {
+      //       model_name: 'google/embedding-gecko-001',
+      //       api_key: process.env.PALM_API_KEY,
+      //     },
+      //   },
+      // },
       // { name: 'imageUrl'},
     ],
     default_sorting_field: 'publishDateTimestamp',
@@ -108,7 +117,9 @@ module.exports = (async () => {
 
   let oldCollectionName;
   try {
-    oldCollectionName = (await typesense.aliases('xkcd').retrieve())['collection_name'];
+    oldCollectionName = (await typesense.aliases('xkcd').retrieve())[
+      'collection_name'
+    ];
   } catch (error) {
     console.warn(error);
   }

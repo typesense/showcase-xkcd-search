@@ -116,11 +116,11 @@ const typesenseInstantsearchAdapter = new TypesenseInstantSearchAdapter({
   //  So you can pass any parameters supported by the search endpoint below.
   //  queryBy is required.
   additionalSearchParameters: {
-    queryBy: 'title,altTitle,transcript,topics',
-    queryByWeights: '127,80,80,1',
-    dropTokensThreshold: 2,
-    typoTokensThreshold: 0,
-    numTypos: 1,
+    query_by: 'title,altTitle,transcript,topics',
+    query_by_weights: '127,80,80,1,1',
+    num_typos: 1,
+    // exclude_fields: 'embedding',
+    // prefix: false
   },
 });
 const searchClient = typesenseInstantsearchAdapter.searchClient;
