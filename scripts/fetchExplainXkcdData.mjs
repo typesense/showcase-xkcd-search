@@ -19,7 +19,7 @@ for await (const comicId of comicIds) {
   if(fs.existsSync(filePath)) {
     console.log(`Comic ${comicId} already exists. Skipping.`)
   } else {
-    console.log(`Fetching Comic ${comicId}.`)
+    console.log(`Fetching explanation for comic ${comicId}.`)
     response = await fetch(`https://www.explainxkcd.com/wiki/index.php/${comicId}`);
     // 🙏 https://stackoverflow.com/a/51302466/123545
     const fileStream = fs.createWriteStream(filePath);
