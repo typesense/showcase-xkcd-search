@@ -1,0 +1,42 @@
+name: Refresh xkcd data
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: yarn
+          cache-dependency-path: yarn.lock
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Cache data
+        uses: actions/cache@v3
+        with:
+          path: data/raw
+          key: data-raw
+
+      - name: Run script
+        env:
+          TYPESENSE_HOST: ${{ env.TYPESENSE_HOST }}
+          TYPESENSE_PORT: ${{ env.TYPESENSE_PORT }}
+          TYPESENSE_PROTOCOL: ${{ env.TYPESENSE_PROTOCOL }}
+          TYPESENSE_ADMIN_API_KEY: ${{ secrets.TYPESENSE_ADMIN_API_KEY }}
+        run: |
+          grep -rl "explanation may be incomplete" data/raw/*.html | xargs rm
+          yarn fetchData
+          grep -rl "server is temporarily unable" data/raw/*.html | xargs rm
+          yarn refreshData
