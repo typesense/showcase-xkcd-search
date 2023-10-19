@@ -120,6 +120,7 @@ const typesenseInstantsearchAdapter = new TypesenseInstantSearchAdapter({
     query_by_weights: '127,80,80,1,1',
     num_typos: 1,
     exclude_fields: 'embedding',
+    vector_query: 'embedding:([], k: 30, distance_threshold: 0.1, alpha: 0.9)',
     // prefix: false
   },
 });
@@ -271,7 +272,7 @@ search.addWidgets([
     items: [
       {
         label: 'relevancy',
-        value: INDEX_NAME,
+        value: `${INDEX_NAME}/sort/_text_match(buckets: 10):desc,publishDateTimestamp:desc`,
       },
       {
         label: 'recent first',
