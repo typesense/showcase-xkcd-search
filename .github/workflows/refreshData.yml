@@ -23,11 +23,21 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Cache data
-        uses: actions/cache/restore@v3
+      - name: Download xkcd cache
+        uses: dawidd6/action-download-artifact@v2
         with:
-          path: data/raw
-          key: data-raw
+          name: xkcd-cache
+          search_artifacts: true
+          workflow_conclusion: ""
+          if_no_artifact_found: warn
+
+      - name: Uncompress xkcd cache
+        run: |
+          tar_file="xkcd-cache.tar.gz" && \
+            [ -f "$tar_file" ] && \
+            tar -xzvf "$tar_file" -C data/raw && \
+            rm xkcd-cache.tar.gz
+          exit 0
 
       - name: Run script
         env:
@@ -42,9 +52,16 @@ jobs:
           find data/raw -name "*.json" -type f -exec grep -l "<html>" {} + | xargs -r rm
           yarn refreshData
 
-      - name: Save cache
+      - name: Compress xkcd cache
         if: success() || failure()
-        uses: actions/cache/save@v3
+        run: |
+          tar -czvf xkcd-cache.tar.gz -C data/raw .
+
+      - name: Save xkcd cache
+        uses: actions/upload-artifact@v3
+        if: always()
         with:
-          path: data/raw
-          key: data-raw
+          name: xkcd-cache
+          path: xkcd-cache.tar.gz
+          if-no-files-found: warn
+          retention-days: 7
