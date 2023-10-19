@@ -53,6 +53,7 @@ yarn fetchData
 
 # Handle 503s
 find data/raw -name "*.html" -type f -exec grep -l "server is temporarily unable" {} + | xargs -r rm
+find data/raw -name "*.json" -type f -exec grep -l "<html>" {} + | xargs -r rm
 
 # Refresh and index
 yarn refreshData

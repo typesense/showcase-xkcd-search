@@ -24,8 +24,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Cache data
-        uses: actions/cache@v3
-        if: always()
+        uses: actions/cache/restore@v3
         with:
           path: data/raw
           key: data-raw
@@ -40,4 +39,12 @@ jobs:
           find data/raw -name "*.html" -type f -exec grep -l "explanation may be incomplete" {} + | xargs -r rm
           yarn fetchData
           find data/raw -name "*.html" -type f -exec grep -l "server is temporarily unable" {} + | xargs -r rm
+          find data/raw -name "*.json" -type f -exec grep -l "<html>" {} + | xargs -r rm
           yarn refreshData
+
+      - name: Save cache
+        if: success() || failure()
+        uses: actions/cache/save@v3
+        with:
+          path: data/raw
+          key: data-raw
