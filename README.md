@@ -48,11 +48,12 @@ Open http://localhost:3000 to see the app.
 
 ```shell
 # Delete cached files that might not have had explanations during previous run
-grep -rl "explanation may be incomplete" data/raw/*.html | xargs rm
+find data/raw -name "*.html" -type f -exec grep -l "explanation may be incomplete" {} + | xargs -r rm
 yarn fetchData
 
 # Handle 503s
-grep -rl "server is temporarily unable" data/raw/*.html | xargs rm
+find data/raw -name "*.html" -type f -exec grep -l "server is temporarily unable" {} + | xargs -r rm
+find data/raw -name "*.json" -type f -exec grep -l "<html>" {} + | xargs -r rm
 
 # Refresh and index
 yarn refreshData

@@ -2,7 +2,7 @@ name: Refresh xkcd data
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '*/2 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -23,20 +23,45 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Cache data
-        uses: actions/cache@v3
+      - name: Download xkcd cache
+        uses: dawidd6/action-download-artifact@v2
         with:
-          path: data/raw
-          key: data-raw
+          name: xkcd-cache
+          search_artifacts: true
+          workflow_conclusion: ""
+          if_no_artifact_found: warn
+
+      - name: Uncompress xkcd cache
+        run: |
+          tar_file="xkcd-cache.tar.gz" && \
+            [ -f "$tar_file" ] && \
+            tar -xzvf "$tar_file" -C data/raw && \
+            rm xkcd-cache.tar.gz
+          exit 0
 
       - name: Run script
         env:
-          TYPESENSE_HOST: ${{ env.TYPESENSE_HOST }}
-          TYPESENSE_PORT: ${{ env.TYPESENSE_PORT }}
-          TYPESENSE_PROTOCOL: ${{ env.TYPESENSE_PROTOCOL }}
+          TYPESENSE_HOST: ${{ vars.TYPESENSE_HOST }}
+          TYPESENSE_PORT: ${{ vars.TYPESENSE_PORT }}
+          TYPESENSE_PROTOCOL: ${{ vars.TYPESENSE_PROTOCOL }}
           TYPESENSE_ADMIN_API_KEY: ${{ secrets.TYPESENSE_ADMIN_API_KEY }}
         run: |
-          grep -rl "explanation may be incomplete" data/raw/*.html | xargs rm
+          find data/raw -name "*.html" -type f -exec grep -l "explanation may be incomplete" {} + | xargs -r rm
           yarn fetchData
-          grep -rl "server is temporarily unable" data/raw/*.html | xargs rm
+          find data/raw -name "*.html" -type f -exec grep -l "server is temporarily unable" {} + | xargs -r rm
+          find data/raw -name "*.json" -type f -exec grep -l "<html>" {} + | xargs -r rm
           yarn refreshData
+
+      - name: Compress xkcd cache
+        if: success() || failure()
+        run: |
+          tar -czvf xkcd-cache.tar.gz -C data/raw .
+
+      - name: Save xkcd cache
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: xkcd-cache
+          path: xkcd-cache.tar.gz
+          if-no-files-found: warn
+          retention-days: 7
