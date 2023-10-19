@@ -44,6 +44,20 @@ yarn start
 
 Open http://localhost:3000 to see the app.
 
+## Update data
+
+```shell
+# Delete cached files that might not have had explanations during previous run
+grep -rl "explanation may be incomplete" data/raw/*.html | xargs rm
+yarn fetchData
+
+# Handle 503s
+grep -rl "server is temporarily unable" data/raw/*.html | xargs rm
+
+# Refresh and index
+yarn refreshData
+```
+
 ## Deployment
 
 The app is hosted on Cloudflare Pages and is set to auto-deploy on git push
