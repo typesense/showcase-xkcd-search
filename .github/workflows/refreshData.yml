@@ -2,7 +2,7 @@ name: Refresh xkcd data
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '*/2 * * * *'
   workflow_dispatch:
 
 jobs:
