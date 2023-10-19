@@ -31,16 +31,14 @@ jobs:
 
       - name: Create .env file
         run: |
-          echo "${{ secrets.ENV_FILE }}" > .env
+          touch .env
+          echo TYPESENSE_HOST=${{ env.TYPESENSE_HOST }} >> .env
+          echo TYPESENSE_PORT=${{ env.TYPESENSE_PORT }} >> .env
+          echo TYPESENSE_PROTOCOL=${{ env.TYPESENSE_PROTOCOL }} >> .env
+          echo TYPESENSE_ADMIN_API_KEY=${{ secrets.TYPESENSE_ADMIN_API_KEY }} >> .env
 
       - name: Run script
-        env:
-          TYPESENSE_HOST: ${{ env.TYPESENSE_HOST }}
-          TYPESENSE_PORT: ${{ env.TYPESENSE_PORT }}
-          TYPESENSE_PROTOCOL: ${{ env.TYPESENSE_PROTOCOL }}
-          TYPESENSE_ADMIN_API_KEY: ${{ secrets.TYPESENSE_ADMIN_API_KEY }}
         run: |
-          echo ${TYPESENSE_HOST}
           find data/raw -name "*.html" -type f -exec grep -l "explanation may be incomplete" {} + | xargs -r rm
           yarn fetchData
           find data/raw -name "*.html" -type f -exec grep -l "server is temporarily unable" {} + | xargs -r rm
