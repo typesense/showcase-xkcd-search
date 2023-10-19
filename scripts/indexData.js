@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const _ = require('lodash');
 
-const BATCH_SIZE = process.env.BATCH_SIZE || 1000;
+const BATCH_SIZE = process.env.BATCH_SIZE || 500;
 const CHUNK_SIZE = process.env.CHUNK_SIZE || 3;
 const MAX_LINES = process.env.MAX_LINES || Infinity;
 const DATA_FILE = process.env.DATA_FILE || './data/transformed_dataset.jsonl';
@@ -52,6 +52,7 @@ module.exports = (async () => {
       },
     ],
     apiKey: process.env.TYPESENSE_ADMIN_API_KEY,
+    connectionTimeoutSeconds: 2 * 60 * 60,
   });
 
   const collectionName = `xkcd_${Date.now()}`;
@@ -65,17 +66,16 @@ module.exports = (async () => {
       { name: 'publishDateYear', type: 'int32', facet: true },
       { name: 'publishDateTimestamp', type: 'int64', facet: true },
       { name: 'topics', type: 'string[]', facet: true },
-      // {
-      //   name: 'embedding',
-      //   type: 'float[]',
-      //   embed: {
-      //     from: ['title', 'transcript', 'altTitle', 'topics'],
-      //     model_config: {
-      //       model_name: 'google/embedding-gecko-001',
-      //       api_key: process.env.PALM_API_KEY,
-      //     },
-      //   },
-      // },
+      {
+        name: 'embedding',
+        type: 'float[]',
+        embed: {
+          from: ['title', 'transcript', 'altTitle', 'topics'],
+          model_config: {
+            model_name: 'ts/e5-small-v2',
+          },
+        },
+      },
       // { name: 'imageUrl'},
     ],
     default_sorting_field: 'publishDateTimestamp',
