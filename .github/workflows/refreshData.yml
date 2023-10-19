@@ -25,6 +25,7 @@ jobs:
 
       - name: Cache data
         uses: actions/cache@v3
+        if: always()
         with:
           path: data/raw
           key: data-raw
