@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>1313: Regex Golf - explain xkcd</title>
+<script src="/cdn-cgi/apps/head/M52ISAAYfDYfNhlAeg3pMasjGfw.js"></script><script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"1313:_Regex_Golf","wgTitle":"1313: Regex Golf","wgCurRevisionId":218223,"wgRevisionId":218223,"wgArticleId":13870,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["All comics","Comics from 2014","Comics from January","Monday comics","Comics featuring Cueball","Comics featuring Megan","Regex","Star Trek"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"1313:_Regex_Golf","wgRelevantArticleId":13870,"wgRequestId":"YVY0a8TjPxi4uffwmURVZQAAAAE","wgIsProbablyEditable":true,"wgRelevantPageIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"1313","wgInternalRedirectTargetUrl":"/wiki/index.php/1313:_Regex_Golf"});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0bhc5ha",function($,jQuery,require,module){mw.user.options.set([]);});mw.loader.implement("user.tokens@06nu0pp",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["mediawiki.action.view.redirect","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="/wiki/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/wiki/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/wiki/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.30.0"/>
+<meta name="description" content="Explain xkcd is a wiki dedicated to explaining the webcomic xkcd. Go figure."/>
+<link rel="alternate" type="application/x-wiki" title="Edit" href="/wiki/index.php?title=1313:_Regex_Golf&amp;action=edit"/>
+<link rel="edit" title="Edit" href="/wiki/index.php?title=1313:_Regex_Golf&amp;action=edit"/>
+<link rel="shortcut icon" href="/wiki/images/0/04/16px-BlackHat_head.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/wiki/opensearch_desc.php" title="explain xkcd (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//www.explainxkcd.com/wiki/api.php?action=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="explain xkcd Atom feed" href="/wiki/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+<link rel="canonical" href="https://www.explainxkcd.com/wiki/index.php/1313:_Regex_Golf"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.min.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-1313_Regex_Golf rootpage-1313_Regex_Golf skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice" class="mw-body-content"><div id="mw-dismissablenotice-anonplace"></div><script>(function(){var node=document.getElementById("mw-dismissablenotice-anonplace");if(node){node.outerHTML="\u003Cdiv id=\"localNotice\" lang=\"en\" dir=\"ltr\"\u003E\u003Cdiv class=\"mw-parser-output\"\u003E\u003Cdiv class=\"plainlinks\" style=\"background:#f5faff; border:1px solid #a7d7f9; margin:1em auto 1em auto; width:100%; font-size: 120%; padding: 0.5ex; text-align: center;\"\u003E\n\u003Cp\u003EWe still need to complete some explanations like this one: \u003Ca href=\"/wiki/index.php/1688:_Map_Age_Guide\" title=\"1688: Map Age Guide\"\u003E1688: Map Age Guide\u003C/a\u003E. All incomplete explanations are \u003Ca href=\"/wiki/index.php/Category:Incomplete_explanations\" title=\"Category:Incomplete explanations\"\u003Ehere\u003C/a\u003E.\n\u003C/p\u003E\u003Cp\u003ENever use the \u003Ci\u003EMath markup language\u003C/i\u003E at the transcript. The reason for this you can read at the \u003Ca href=\"/wiki/index.php/explain_xkcd:Editor_FAQ\" title=\"explain xkcd:Editor FAQ\"\u003EEditor FAQ\u003C/a\u003E.\n\u003C/p\u003E\n\u003C/div\u003E\n\u003C/div\u003E\u003C/div\u003E";}}());</script></div>
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">1313: Regex Golf</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub" class="noprint">Explain xkcd: It&#039;s &#039;cause you&#039;re dumb.</div>
+								<div id="contentSub"><span class="mw-redirectedfrom">(Redirected from <a href="/wiki/index.php?title=1313&amp;redirect=no" class="mw-redirect" title="1313">1313</a>)</span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><table class="" cellspacing="5" style="background-color: #FFFFFF; border: 1px solid #AAAAAA; color: black; font-size: 88%; line-height: 1.5em; margin: 0.5em 0 0.5em 1em; padding: 0.2em; text-align: center; width:98%;"><tr><td><ul style="text-align: center; margin-bottom: 10px;" class="no-link-underline"><li style="background-color: #6E7B91; border: 1.5px solid #333333; border-radius: 3px 3px 3px 3px; box-shadow: 0 0 5px 0 gray; display: inline; font-size: 16px; font-variant: small-caps; font-weight: 600; margin: 0 4px; padding: 1.5px 0;"><a href="/wiki/index.php/1" class="mw-redirect" title="1"><span style="color: #FFFFFF; padding: 0 12px;">&#124;&lt;</span></a></li><li style="background-color: #6E7B91; border: 1.5px solid #333333; border-radius: 3px 3px 3px 3px; box-shadow: 0 0 5px 0 gray; display: inline; font-size: 16px; font-variant: small-caps; font-weight: 600; margin: 0 4px; padding: 1.5px 0;"><a href="/wiki/index.php/1312" class="mw-redirect" title="1312"><span style="color: #FFFFFF; padding: 0 12px;">&lt;&#160;Prev</span></a></li><li style="background-color: #6E7B91; border: 1.5px solid #333333; border-radius: 3px 3px 3px 3px; box-shadow: 0 0 5px 0 gray; display: inline; font-size: 16px; font-variant: small-caps; font-weight: 600; margin: 0 4px; padding: 1.5px 0;" class="plainlinks"><a rel="nofollow" class="external text" href="https://www.xkcd.com/1313/"><span style="color: #FFFFFF; padding: 0 12px;">Comic&#160;&#35;1313&#160;(January&#160;6,&#160;2014)</span></a></li><li style="background-color: #6E7B91; border: 1.5px solid #333333; border-radius: 3px 3px 3px 3px; box-shadow: 0 0 5px 0 gray; display: inline; font-size: 16px; font-variant: small-caps; font-weight: 600; margin: 0 4px; padding: 1.5px 0;"><a href="/wiki/index.php/1314" class="mw-redirect" title="1314"><span style="color: #FFFFFF; padding: 0 12px;">Next&#160;&gt;</span></a></li><li style="background-color: #6E7B91; border: 1.5px solid #333333; border-radius: 3px 3px 3px 3px; box-shadow: 0 0 5px 0 gray; display: inline; font-size: 16px; font-variant: small-caps; font-weight: 600; margin: 0 4px; padding: 1.5px 0;"><a href="/wiki/index.php/2522" class="mw-redirect" title="2522"><span style="color: #FFFFFF; padding: 0 12px;">&gt;&#124;</span></a></li></ul></td></tr><tr><td style="font-size: 20px; padding-bottom:10px"><b>Regex Golf</b></td></tr><tr><td><a href="/wiki/index.php/File:regex_golf.png" class="image" title="/bu|[rn]t|[coy]e|[mtg]a|j|iso|n[hl]|[ae]d|lev|sh|[lnd]i|[po]o|ls/ matches the last names of elected US presidents but not their opponents."><img alt="/bu|[rn]t|[coy]e|[mtg]a|j|iso|n[hl]|[ae]d|lev|sh|[lnd]i|[po]o|ls/ matches the last names of elected US presidents but not their opponents." src="/wiki/images/7/7b/regex_golf.png" width="740" height="271" /></a><br /><span style=""><span style="color:grey">Title text:</span> /bu|[rn]t|[coy]e|[mtg]a|j|iso|n[hl]|[ae]d|lev|sh|[lnd]i|[po]o|ls/ matches the last names of elected US presidents but not their opponents.</span></td></tr></table>
+<h2><span class="mw-headline" id="Explanation">Explanation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=1313:_Regex_Golf&amp;action=edit&amp;section=1" title="Edit section: Explanation">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The comic talks about <a href="https://en.wikipedia.org/wiki/Regular_expressions" class="extiw" title="wikipedia:Regular expressions">regular expressions</a>, which are a way to specify textual patterns. Given a regular expression, one can search for the pattern it specifies inside a text string. If the pattern is found, it's said that the pattern "matches" the string; if it's not found, it's said it doesn't match.
+</p><p>The title of the comic and the first panel is based on "<a rel="nofollow" class="external text" href="http://regex.alf.nu/">regex golf</a>", which is a discipline of "<a href="https://en.wikipedia.org/wiki/Code_golf" class="extiw" title="wikipedia:Code golf">code golf</a>", a game in which programmers attempt to solve a given programming problem using as few characters as possible, analogous to the number of <a href="https://en.wikipedia.org/wiki/Golf" class="extiw" title="wikipedia:Golf">golf</a> shots it takes to reach the goal. In regex golfing, the programmer is given two sets of text fragments, and tries to write the shortest possible regular expression which would match all elements of one set, while at the same time not matching any element from the other set.
+</p><p>The regex golf challenge Megan faces consists of matching all subtitles of (then extant) <i><a href="https://en.wikipedia.org/wiki/Star_Wars" class="extiw" title="wikipedia:Star Wars">Star Wars</a></i> films, while not matching any subtitle of <i><a href="https://en.wikipedia.org/wiki/Star_Trek" class="extiw" title="wikipedia:Star Trek">Star Trek</a></i> movies. <a href="https://en.wikipedia.org/wiki/Subtitle_(titling)" class="extiw" title="wikipedia:Subtitle (titling)">Subtitles</a> are the secondary titles of the movies, after the <i>"Star Trek: "</i> or <i>"Star Wars Episode N: "</i>. For example, in <i>Star Wars Episode I: The Phantom Menace</i>, the subtitle is <i>The Phantom Menace</i>. In the first panel, she created a 12-character regex solving the challenge.
+</p><p>Then she moved on to building a tool which would automatically build such a regex for arbitrary lists of text, which could be described as <a href="https://en.wikipedia.org/wiki/Meta" class="extiw" title="wikipedia:Meta">meta</a>- regex golfing. But as she has lost this tool, she needs to search through her files and chooses a tool called "<a href="https://en.wikipedia.org/wiki/Grep" class="extiw" title="wikipedia:Grep">grep</a>" to find it. This implies that she needs a regular expression that would find any code that appears to be a regex golf generator, which leads to another "meta-" layer of abstraction. At the end, Megan notes this sequence of meta-meta-... might go to infinity and Cueball quips that she now has "infinite problems" as a result of her efforts; Megan retorts that she already had "infinite problems" because she's geeky enough to run meta-versions of programs on themselves, and stubborn enough to continue on until she fails, to the exclusion of all else. This also seems to be a reference to a famous quote (see also <i><a href="/wiki/index.php/1171:_Perl_Problems" title="1171: Perl Problems">1171: Perl Problems</a></i>):
+</p>
+<blockquote><i>Some people, when confronted with a problem, think "I know, I'll use regular expressions." Now they have two problems.</i></blockquote>
+<h3><span class="mw-headline" id="Regular_expressions">Regular expressions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=1313:_Regex_Golf&amp;action=edit&amp;section=2" title="Edit section: Regular expressions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The first regex Megan uses is <code>/m | [tn]|b/</code>, said to match <i>Star Wars</i> subtitles but not <i>Star Trek</i>.
+</p><p>The forward slashes <code>/</code> just mark the start and end of the regex. The <code>|</code> character means "or", so the regex matches any string that contains the patterns "<code>m </code>", "<code> [tn]</code>" or "<code>b</code>" (including the spaces). The square brackets match one of the enclosed characters, meaning that "<code> [tn]</code>" matches either "<code> t</code>" or "<code> n</code>". The regex is apparently case-insensitive, because it wouldn't work otherwise.
+</p><p>The Star Wars subtitles match the parts of the regex in the following way:
+</p>
+<ul><li>"The Phanto<u>m </u>Menace" is matched by "<code>m </code>".</li>
+<li>"Attack of<u> t</u>he Clones" is matched by "<code> [tn]</code>".</li>
+<li>"Revenge of<u> t</u>he Sith" is matched by "<code> [tn]</code>".</li>
+<li>"A<u> N</u>ew Hope" is matched by "<code> [tn]</code>".</li>
+<li>"The Empire Strikes <u>B</u>ack" is matched by "<code>b</code>".</li>
+<li>"Return of<u> t</u>he Jedi" is matched by "<code> [tn]</code>".</li></ul>
+<p>Note that if the animated film "Star Wars: The Clone Wars" were included, it would not be matched by "<code> [tn]</code>" because the T is the start of the subtitle and is not preceded by a space. None of the "Star Wars:" films titles announced since this comic ("The Force Awakens", "The Last Jedi", and "The Rise of Skywalker") match this regex.
+</p><p>On the other hand, none of the Star Trek subtitles contains an M followed by a space, a T or an N preceded by a space, or any B, so the regex does not match any of them. Note that in the original series all subtitles start with a "T" but it's the first character so it's not preceded by a space.
+</p><p>Here is the list that Megan probably used:
+</p>
+<ul><li>Original series:
+<ul><li>The Motion Picture</li>
+<li>The Wrath of Khan</li>
+<li>The Search For Spock</li>
+<li>The Voyage Home</li>
+<li>The Final Frontier</li>
+<li>The Undiscovered Country</li></ul></li>
+<li>The Next Generation:
+<ul><li>Generations</li>
+<li>First Contact</li>
+<li>Insurrection</li>
+<li>Nemesis</li></ul></li>
+<li>Reboot series:
+<ul><li>Into Darkness</li></ul></li></ul>
+<p>"Star Trek Beyond", which was released after this comic, would incorrectly match the regex since it is the first "Star Trek" title to contain a "b". However, since "Star Trek Into Darkness" and "Star Trek Beyond" both lack a colon in their titles, it is <a href="/wiki/index.php/1167:_Star_Trek_into_Darkness" title="1167: Star Trek into Darkness">debatable</a> whether they can truly be considered to have subtitles.
+</p><p>In the last panel "and beyond" Megan uses the regular expression <code>/(meta-)*regex golf/</code> to describe her problem. <code>*</code> means "zero or more" of the preceding character/group (parentheses <code>()</code> group characters). So this regex matches "regex golf", "meta-regex golf", "meta-meta-regex golf", etc. In a way this is regex golf in itself, matching all levels of meta-regex golf while not matching anything else.
+</p><p>In the title text, there is a long regex that is the solution of another regex golf challenge: matching the last names of all elected US presidents but not their opponents. Note that the list of opponents include some people who were previously or later became presidents, or whose last name matches that of another person who was president, so taken literally this is impossible. To make this work the list of opponents must exclude any names of presidents. The regular expression itself works in a very similar way to the Star Wars/Trek one, including several different patterns separated by <code>|</code>. Each elected president matches one pattern while each opponent matches none.
+</p><p>The regex does not match either of the presidents elected since the comic’s release ("Trump" and "Biden"), and thus would need to be updated. The regex does match Hillary Clinton's last name, but because a person with the same last name (Bill Clinton) was president, this does not count as a mistake. There was already a losing opponent called George Clinton who ran in 1792 and 1812.
+</p><p>Here is a list of elected president and the patterns they match:
+</p>
+<table class="wikitable">
+<tr>
+<th>Number
+</th>
+<th>President
+</th>
+<th>Matched expression
+</th></tr>
+<tr>
+<td>1
+</td>
+<td><a href="https://en.wikipedia.org/wiki/George_Washington" class="extiw" title="wikipedia:George Washington">George Wa<u>sh</u>ington</a>
+</td>
+<td><code>sh</code>
+</td></tr>
+<tr>
+<td>2
+</td>
+<td><a href="https://en.wikipedia.org/wiki/John_Adams" class="extiw" title="wikipedia:John Adams">John <u>Ad</u>ams</a>
+</td>
+<td><code>[ae]d</code>
+</td></tr>
+<tr>
+<td>3
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Thomas_Jefferson" class="extiw" title="wikipedia:Thomas Jefferson">Thomas <u>J</u>efferson</a>
+</td>
+<td><code>j</code>
+</td></tr>
+<tr>
+<td>4
+</td>
+<td><a href="https://en.wikipedia.org/wiki/James_Madison" class="extiw" title="wikipedia:James Madison">James <u>Ma</u>dison</a>
+</td>
+<td><code>[mtg]a</code>
+</td></tr>
+<tr>
+<td>5
+</td>
+<td><a href="https://en.wikipedia.org/wiki/James_Monroe" class="extiw" title="wikipedia:James Monroe">James Monr<u>oe</u></a>
+</td>
+<td><code>[coy]e</code>
+</td></tr>
+<tr>
+<td>6
+</td>
+<td><a href="https://en.wikipedia.org/wiki/John_Quincy_Adams" class="extiw" title="wikipedia:John Quincy Adams">John Quincy <u>Ad</u>ams</a>
+</td>
+<td><code>[ae]d</code>
+</td></tr>
+<tr>
+<td>7
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Andrew_Jackson" class="extiw" title="wikipedia:Andrew Jackson">Andrew <u>J</u>ackson</a>
+</td>
+<td><code>j</code>
+</td></tr>
+<tr>
+<td>8
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Martin_Van_Buren" class="extiw" title="wikipedia:Martin Van Buren">Martin Van <u>Bu</u>ren</a>
+</td>
+<td><code>bu</code>
+</td></tr>
+<tr>
+<td>9
+</td>
+<td><a href="https://en.wikipedia.org/wiki/William_Henry_Harrison" class="extiw" title="wikipedia:William Henry Harrison">William Henry Harr<u>iso</u>n</a>
+</td>
+<td><code>iso</code>
+</td></tr>
+<tr>
+<td>11
+</td>
+<td><a href="https://en.wikipedia.org/wiki/James_K._Polk" class="extiw" title="wikipedia:James K. Polk">James K. <u>Po</u>lk</a>
+</td>
+<td><code>[po]o</code>
+</td></tr>
+<tr>
+<td>12
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Zachary_Taylor" class="extiw" title="wikipedia:Zachary Taylor">Zachary <u>Ta</u>ylor</a>
+</td>
+<td><code>[mtg]a</code>
+</td></tr>
+<tr>
+<td>14
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Franklin_Pierce" class="extiw" title="wikipedia:Franklin Pierce">Franklin Pier<u>ce</u></a>
+</td>
+<td><code>[coy]e</code>
+</td></tr>
+<tr>
+<td>15
+</td>
+<td><a href="https://en.wikipedia.org/wiki/James_Buchanan" class="extiw" title="wikipedia:James Buchanan">James <u>Bu</u>chanan</a>
+</td>
+<td><code>bu</code>
+</td></tr>
+<tr>
+<td>16
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Abraham_Lincoln" class="extiw" title="wikipedia:Abraham Lincoln">Abraham <u>Li</u>ncoln</a>
+</td>
+<td><code>[lnd]i</code>
+</td></tr>
+<tr>
+<td>17
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Andrew_Johnson" class="extiw" title="wikipedia:Andrew Johnson">Andrew <u>J</u>ohnson</a>
+</td>
+<td><code>j</code>
+</td></tr>
+<tr>
+<td>18
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Ulysses_S._Grant" class="extiw" title="wikipedia:Ulysses S. Grant">Ulysses S. Gra<u>nt</u></a>
+</td>
+<td><code>[rn]t</code>
+</td></tr>
+<tr>
+<td>19
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Rutherford_B._Hayes" class="extiw" title="wikipedia:Rutherford B. Hayes">Rutherford B. Ha<u>ye</u>s</a>
+</td>
+<td><code>[coy]e</code>
+</td></tr>
+<tr>
+<td>20
+</td>
+<td><a href="https://en.wikipedia.org/wiki/James_A._Garfield" class="extiw" title="wikipedia:James A. Garfield">James A. <u>Ga</u>rfield</a>
+</td>
+<td><code>[mtg]a</code>
+</td></tr>
+<tr>
+<td>22
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Grover_Cleveland" class="extiw" title="wikipedia:Grover Cleveland">Grover C<u>lev</u>eland</a>
+</td>
+<td><code>lev</code>
+</td></tr>
+<tr>
+<td>23
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Benjamin_Harrison" class="extiw" title="wikipedia:Benjamin Harrison">Benjamin Harr<u>iso</u>n</a>
+</td>
+<td><code>iso</code>
+</td></tr>
+<tr>
+<td>24
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Grover_Cleveland" class="extiw" title="wikipedia:Grover Cleveland">Grover C<u>lev</u>eland</a>
+</td>
+<td><code>lev</code>
+</td></tr>
+<tr>
+<td>25
+</td>
+<td><a href="https://en.wikipedia.org/wiki/William_McKinley" class="extiw" title="wikipedia:William McKinley">William McKi<u>nl</u>ey</a>
+</td>
+<td><code>n[hl]</code>
+</td></tr>
+<tr>
+<td>26
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Theodore_Roosevelt" class="extiw" title="wikipedia:Theodore Roosevelt">Theodore R<u>oo</u>sevelt</a>
+</td>
+<td><code>[po]o</code>
+</td></tr>
+<tr>
+<td>27
+</td>
+<td><a href="https://en.wikipedia.org/wiki/William_Howard_Taft" class="extiw" title="wikipedia:William Howard Taft">William Howard <u>Ta</u>ft</a>
+</td>
+<td><code>[mtg]a</code>
+</td></tr>
+<tr>
+<td>28
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Woodrow_Wilson" class="extiw" title="wikipedia:Woodrow Wilson">Woodrow Wi<u>ls</u>on</a>
+</td>
+<td><code>ls</code>
+</td></tr>
+<tr>
+<td>29
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Warren_G._Harding" class="extiw" title="wikipedia:Warren G. Harding">Warren G. Har<u>di</u>ng</a>
+</td>
+<td><code>[lnd]i</code>
+</td></tr>
+<tr>
+<td>30
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Calvin_Coolidge" class="extiw" title="wikipedia:Calvin Coolidge">Calvin Coo<u>li</u>dge</a>
+</td>
+<td><code>[lnd]i</code>
+</td></tr>
+<tr>
+<td>31
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Herbert_Hoover" class="extiw" title="wikipedia:Herbert Hoover">Herbert H<u>oo</u>ver</a>
+</td>
+<td><code>[po]o</code>
+</td></tr>
+<tr>
+<td>32
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Franklin_D._Roosevelt" class="extiw" title="wikipedia:Franklin D. Roosevelt">Franklin D. R<u>oo</u>sevelt</a>
+</td>
+<td><code>[po]o</code>
+</td></tr>
+<tr>
+<td>33
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Harry_S._Truman" class="extiw" title="wikipedia:Harry S. Truman">Harry S. Tru<u>ma</u>n</a>
+</td>
+<td><code>[mtg]a</code>
+</td></tr>
+<tr>
+<td>34
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Dwight_D._Eisenhower" class="extiw" title="wikipedia:Dwight D. Eisenhower">Dwight D. Eise<u>nh</u>ower</a>
+</td>
+<td><code>n[hl]</code>
+</td></tr>
+<tr>
+<td>35
+</td>
+<td><a href="https://en.wikipedia.org/wiki/John_F._Kennedy" class="extiw" title="wikipedia:John F. Kennedy">John F. Kenn<u>ed</u>y</a>
+</td>
+<td><code>[ae]d</code>
+</td></tr>
+<tr>
+<td>36
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Lyndon_B._Johnson" class="extiw" title="wikipedia:Lyndon B. Johnson">Lyndon B. <u>J</u>ohnson</a>
+</td>
+<td><code>j</code>
+</td></tr>
+<tr>
+<td>37
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Richard_Nixon" class="extiw" title="wikipedia:Richard Nixon">Richard <u>Ni</u>xon</a>
+</td>
+<td><code>[lnd]i</code>
+</td></tr>
+<tr>
+<td>39
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Jimmy_Carter" class="extiw" title="wikipedia:Jimmy Carter">Jimmy Ca<u>rt</u>er</a>
+</td>
+<td><code>[rn]t</code>
+</td></tr>
+<tr>
+<td>40
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Ronald_Reagan" class="extiw" title="wikipedia:Ronald Reagan">Ronald Rea<u>ga</u>n</a>
+</td>
+<td><code>[mtg]a</code>
+</td></tr>
+<tr>
+<td>41
+</td>
+<td><a href="https://en.wikipedia.org/wiki/George_H._W._Bush" class="extiw" title="wikipedia:George H. W. Bush">George H. W. <u>Bu</u>sh</a>
+</td>
+<td><code>bu</code>
+</td></tr>
+<tr>
+<td>42
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Bill_Clinton" class="extiw" title="wikipedia:Bill Clinton">Bill Cli<u>nt</u>on</a>
+</td>
+<td><code>[rn]t</code>
+</td></tr>
+<tr>
+<td>43
+</td>
+<td><a href="https://en.wikipedia.org/wiki/George_W._Bush" class="extiw" title="wikipedia:George W. Bush">George W. <u>Bu</u>sh</a>
+</td>
+<td><code>bu</code>
+</td></tr>
+<tr>
+<td>44
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Barack_Obama" class="extiw" title="wikipedia:Barack Obama">Barack Oba<u>ma</u></a>
+</td>
+<td><code>[mtg]a</code>
+</td></tr></table>
+<p>Some presidents are missing because they weren't elected but became presidents after the resignation/death of their formers.
+</p><p>And here is a list of how many unique last names are matched by each expression:
+</p>
+<table class="wikitable">
+<tr>
+<th>Expression
+</th>
+<th>Match count
+</th></tr>
+<tr>
+<td> bu
+</td>
+<td> 3
+</td></tr>
+<tr>
+<td> [rn]t
+</td>
+<td> 3
+</td></tr>
+<tr>
+<td> [coy]e
+</td>
+<td> 3
+</td></tr>
+<tr>
+<td> [mtg]a
+</td>
+<td> 7
+</td></tr>
+<tr>
+<td> j
+</td>
+<td> 3
+</td></tr>
+<tr>
+<td> iso
+</td>
+<td> 1
+</td></tr>
+<tr>
+<td> n[hl]
+</td>
+<td> 2
+</td></tr>
+<tr>
+<td> [ae]d
+</td>
+<td> 2
+</td></tr>
+<tr>
+<td> lev
+</td>
+<td> 1
+</td></tr>
+<tr>
+<td> sh
+</td>
+<td> 1
+</td></tr>
+<tr>
+<td> [lnd]i
+</td>
+<td> 4
+</td></tr>
+<tr>
+<td> [po]o
+</td>
+<td> 3
+</td></tr>
+<tr>
+<td> ls
+</td>
+<td> 1
+</td></tr></table>
+<p>Randall's regular expression does <i>not</i> match presidential opponents Pinckney, King, Clay, Cass, Scott, Douglas, McClellan, Seymour, Greeley, Tilden, Hancock, Blaine, Bryan, Parker, Hughes, Cox, Davis, Smith, Landon, Willkie, Dewey, Stevenson, Goldwater, Humphrey, McGovern, Mondale, Dukakis, Dole, Gore, Kerry, McCain, or Romney.  However, it must be modified slightly, because it <i>does</i> match <a href="https://en.wikipedia.org/wiki/John_C._Fremont" class="extiw" title="wikipedia:John C. Fremont">John C. Fremo<u>nt</u></a>, the runner-up to James Buchanan in 1856, as discussed by <a href="https://en.wikipedia.org/wiki/Peter_Norvig" class="extiw" title="wikipedia:Peter Norvig">Peter Norvig</a> at <a rel="nofollow" class="external text" href="https://nbviewer.jupyter.org/url/norvig.com/ipython/xkcd1313.ipynb">xkcd 1313: Regex Golf</a>.  It also matches <a href="https://en.wikipedia.org/wiki/Aaron_Burr" class="extiw" title="wikipedia:Aaron Burr">Aaron <u>Bu</u>rr</a>, the runner-up to Thomas Jefferson in 1800.  Note that Norvig provides a small amount of Python code which actually plays regex golf with arbitrary lists, and found a shorter solution than Randall's for the <i>Star Wars</i> vs <i>Star Trek</i> game (<code>/ t|p.*e/</code>).
+</p>
+<h2><span class="mw-headline" id="Transcript">Transcript</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=1313:_Regex_Golf&amp;action=edit&amp;section=3" title="Edit section: Transcript">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<dl><dd>[Caption at top of panel:]</dd>
+<dd>Regex golf:</dd>
+<dd>[Megan is sitting at a laptop. Cueball is standing behind her.]</dd>
+<dd>Megan: You try to match one group but not the other.</dd>
+<dd>Megan: /m | [tn]|b/ matches <i>Star Wars</i> subtitles but not <i>Star Trek</i>.</dd>
+<dd>Cueball: Cool.</dd></dl>
+<dl><dd>[Caption at top of panel:]</dd>
+<dd>Meta-regex golf:</dd>
+<dd>[A close-up of Megan at her laptop.]</dd>
+<dd>Megan: So I wrote a program that plays regex golf with arbitrary lists...</dd>
+<dd>Cueball (offscreen): Uh oh...</dd></dl>
+<dl><dd>[Caption at top of panel:]</dd>
+<dd>Meta-meta-regex golf:</dd>
+<dd>[Megan typing at her laptop.]</dd>
+<dd>Megan: ...But I lost my code, so I'm grepping for files that look like regex golf solvers.</dd>
+<dd>[Cueball facepalming.]</dd></dl>
+<dl><dd>[Caption at top of panel:]</dd>
+<dd>...And beyond:</dd>
+<dd>[Another closeup of Megan at her laptop.]</dd>
+<dd>Megan: Really, this is all /(meta-)*regex golf/.</dd>
+<dd>Cueball: Now you have <i>infinite</i> problems.</dd>
+<dd>Megan: No, I had those already.</dd></dl>
+<h2><span class="mw-headline" id="Trivia">Trivia</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=1313:_Regex_Golf&amp;action=edit&amp;section=4" title="Edit section: Trivia">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li>There are now at least four comics that reference regular expressions. The other three are: <a href="/wiki/index.php/208:_Regular_Expressions" title="208: Regular Expressions">208: Regular Expressions</a>, <a href="/wiki/index.php/224:_Lisp" title="224: Lisp">224: Lisp</a>, and <a href="/wiki/index.php/1171:_Perl_Problems" title="1171: Perl Problems">1171: Perl Problems</a>.</li>
+<li>Additionally, regular expressions are mentioned in the title text of <a href="/wiki/index.php/1277:_Ayn_Random" title="1277: Ayn Random">1277: Ayn Random</a>.</li>
+<li>A regular expression is used in the <a rel="nofollow" class="external text" href="https://what-if.xkcd.com/75/">75th</a> post of <a href="/wiki/index.php/what_if%3F" class="mw-redirect" title="what if?">what if?</a> to calculate the answer to that week's question.</li>
+<li>Also, Randall mentions <a rel="nofollow" class="external text" href="http://regex.alf.nu/">a website with a regexp golf game</a> he got distracted by while researching for the <a rel="nofollow" class="external text" href="https://what-if.xkcd.com/78/">78th</a> post of <a href="/wiki/index.php/what_if%3F" class="mw-redirect" title="what if?">what if?</a> (which was published one day after this comic).</li></ul>
+<p><br />
+</p>
+<span id="Discussion"></span><span style="position:absolute; right:0; padding-top:1em;"><img alt="comment.png" src="/wiki/images/0/03/comment.png" width="16" height="16" />&#160;<a rel="nofollow" class="external text" href="//www.explainxkcd.com/wiki/index.php?title=Talk:1313:_Regex_Golf&amp;action=edit"><b>add a comment!</b></a>&#160;&#8901;&#160;<img alt="comment.png" src="/wiki/images/0/03/comment.png" width="16" height="16" />&#160;<a rel="nofollow" class="external text" href="//www.explainxkcd.com/wiki/index.php?title=Talk:1313:_Regex_Golf&amp;action=edit&amp;section=new"><b>add a topic (use sparingly)!</b></a>&#160;&#8901;&#160;<img alt="Icons-mini-action refresh blue.gif" src="/wiki/images/e/e5/Icons-mini-action_refresh_blue.gif" width="16" height="16" />&#160;<a rel="nofollow" class="external text" href="//www.explainxkcd.com/wiki/index.php?title=1313:_Regex_Golf&amp;action=purge"><b>refresh comments!</b></a></span><h1><span class="mw-headline" id="Discussion">Discussion</span></h1><div style="border:1px solid grey; background:#eee; padding:1em;">
+<p>This is fairly simple fun little one.
+</p><p>Regex is sort for regular expressions. A regular expression is a series of characters that denotes a search criteria. For example, you could write a regular expression that would search for anything that looks like an address (a la <a rel="nofollow" class="external text" href="https://www.xkcd.com/208/">comic 208</a>).
+</p><p>Regex golf is a game in which you attempt to write a regular expression that will search through a list of items and bring back only those items that meet a certain criteria, but not anything else. The joke is that regular expressions are used to search text, but themselves are text strings. This means that you could write a regular expression that would look for another regular expression. You can then apply <i>ad infinitum</i>, and the universe implodes or something.
+</p><p>--<a href="/wiki/index.php?title=User:Holshy&amp;action=edit&amp;redlink=1" class="new" title="User:Holshy (page does not exist)">Holshy</a> (<a href="/wiki/index.php?title=User_talk:Holshy&amp;action=edit&amp;redlink=1" class="new" title="User talk:Holshy (page does not exist)">talk</a>) 05:40, 6 January 2014 (UTC)
+</p><p>The last panel includes, of course, a regex "/(meta-)*regex golf/," which represents the phrase "regex golf" preceded by the phrase "meta-" up to <i>infinite</i> times.
+</p><p>As a punchline, it also refers to Jamie Zawinski's well-known quote about regex,
+</p>
+<blockquote>Some people, when confronted with a problem, think "I know, I'll use regular expressions." Now they have two problems.</blockquote>
+<p>Thus, the punchline is that the addition of meta layers to regex golf generates more problems for the programmer, but that was also the setup of the comic. So either the punchline is really weak—worth a chuckle if you got the above two references—or I missed the joke.
+<a href="/wiki/index.php/Special:Contributions/199.27.128.63" title="Special:Contributions/199.27.128.63">199.27.128.63</a> 06:22, 6 January 2014 (UTC)
+</p><p>Could anybody comment on the first regex? Do I get it right that
+beyond others it will match all strings that contain a "b"? I can hardly believe that is not the case for any star trek subtitle... <a href="/wiki/index.php/Special:Contributions/173.245.53.194" title="Special:Contributions/173.245.53.194">173.245.53.194</a> 06:54, 6 January 2014 (UTC)
+</p>
+<dl><dd>This is the case for all Star Trek Subtitles. Wikipedia's list of movies had no b. It'll match anything containing a word ending in <i>m</i>, any word beginning with <i>n</i> or <i>t</i> that is not the first word, or any word with a <i>b</i>. No Trek movies match. Oddly, so far as I can figure out, the regex in the first panel is wrong, in that it doesn't match the second Star Wars movie at all. And before you tell me prequels don't count, the sole purpose of "m " is to match The Phanto<i>m </i>Menace.<a href="/wiki/index.php/Special:Contributions/199.27.128.138" title="Special:Contributions/199.27.128.138">199.27.128.138</a> 07:10, 6 January 2014 (UTC)</dd></dl>
+<p>Attack of[ t]he Clones (to be read plainly, not as a regular expression). <a href="/wiki/index.php/Special:Contributions/173.245.53.107" title="Special:Contributions/173.245.53.107">173.245.53.107</a> 07:29, 6 January 2014 (UTC)
+</p>
+<dl><dd>Ah, I thought it was <i>The Clone Wars</i>. <a href="/wiki/index.php/Special:Contributions/199.27.128.138" title="Special:Contributions/199.27.128.138">199.27.128.138</a> 15:36, 6 January 2014 (UTC)</dd></dl>
+<p>So, if I add an "e" to the "tn" and delete the "|b" I'm a better golf player than her? <a href="/wiki/index.php/Special:Contributions/108.162.212.194" title="Special:Contributions/108.162.212.194">108.162.212.194</a> 08:23, 6 January 2014 (UTC)
+</p>
+<dl><dd>Or you could just move the "b" into the "tn" group. --11:08, 6 January 2014 (UTC)</dd></dl>
+<p>I got a sneak preview of this comic at about 6:34 EST...at first it appeared to be random text in a irc message, but with this comic it now makes sense to me. <a href="/wiki/index.php?title=User:Verticalbar&amp;action=edit&amp;redlink=1" class="new" title="User:Verticalbar (page does not exist)">Verticalbar</a> (<a href="/wiki/index.php?title=User_talk:Verticalbar&amp;action=edit&amp;redlink=1" class="new" title="User talk:Verticalbar (page does not exist)">talk</a>) 09:31, 6 January 2014 (UTC)
+</p><p><b>Regex golf</b> (c.f. <a href="https://en.wikipedia.org/wiki/Perl_golf" class="extiw" title="wikipedia:Perl golf">Perl golf</a>) is a programming competition / is a pastime of finding regular expression that matches one set of strings while matching none of the other set.  See for example <a rel="nofollow" class="external free" href="http://regex.alf.nu">http://regex.alf.nu</a> --<a href="/wiki/index.php?title=User:JakubNarebski&amp;action=edit&amp;redlink=1" class="new" title="User:JakubNarebski (page does not exist)">JakubNarebski</a> (<a href="/wiki/index.php/User_talk:JakubNarebski" title="User talk:JakubNarebski">talk</a>) 11:03, 6 January 2014 (UTC)
+</p><p>The title text isn't exactly true... I haven't tried everything, but that regex doesn't match "gerald ford" at all. <a href="/wiki/index.php/Special:Contributions/199.27.128.109" title="Special:Contributions/199.27.128.109">199.27.128.109</a> 11:23, 6 January 2014 (UTC)
+</p>
+<dl><dd> Gerald Ford wasn't elected, he became President following Nixon's resignation.</dd></dl>
+<p><a href="/wiki/index.php/Special:Contributions/173.245.52.209" title="Special:Contributions/173.245.52.209">173.245.52.209</a> 12:12, 6 January 2014 (UTC)
+</p><p>Inspired by regex.alf.nu, a reader built a page where the objective is to make a regular expression to match all Star Wars and no Star Trek: <a rel="nofollow" class="external free" href="https://zegnat.github.io/xkcd1313/">http://zegnat.github.io/xkcd1313/</a>. <a href="/wiki/index.php/Special:Contributions/173.245.53.127" title="Special:Contributions/173.245.53.127">173.245.53.127</a> 14:00, 6 January 2014 (UTC)
+</p><p>I added a list of all US elected presidents and the part of the title regex they match. I used a python script to generate it, with input from <a rel="nofollow" class="external text" href="http://http://en.wikipedia.org/wiki/List_of_United_States_presidential_candidates">here</a>, then I removed all presidents that do not match after finding they really weren't elected. There may still be superflous ones, that weren't elected but do match the regex, please check. <a href="/wiki/index.php/Special:Contributions/173.245.49.64" title="Special:Contributions/173.245.49.64">173.245.49.64</a> 14:29, 6 January 2014 (UTC)
+</p><p>Does anyone understand the final "No, I had those already"? Is it a reference to regexes in some way or could it be something like that there are infinite problems in life, even when not doing (Meta-)*-Regexes? --<a href="/wiki/index.php/Special:Contributions/173.245.53.199" title="Special:Contributions/173.245.53.199">173.245.53.199</a> 20:32, 6 January 2014 (UTC)
+</p><p><br />
+According to Peter Norvig (Director of research at google), one of the Regular Expression of Randall is wrong as demonstrated here&#160;: <a rel="nofollow" class="external free" href="https://nbviewer.jupyter.org/url/norvig.com/ipython/xkcd1313.ipynb">http://nbviewer.ipython.org/url/norvig.com/ipython/xkcd1313.ipynb</a> <a href="/wiki/index.php?title=User:Mbussonn&amp;action=edit&amp;redlink=1" class="new" title="User:Mbussonn (page does not exist)">Mbussonn</a> (<a href="/wiki/index.php?title=User_talk:Mbussonn&amp;action=edit&amp;redlink=1" class="new" title="User talk:Mbussonn (page does not exist)">talk</a>) 20:47, 6 January 2014 (UTC)
+</p>
+<dl><dd> It's happening. --<a href="/wiki/index.php/Special:Contributions/173.245.53.153" title="Special:Contributions/173.245.53.153">173.245.53.153</a> 11:39, 7 January 2014 (UTC)</dd></dl>
+<p>"No one wins at [^ ]+ golf." <a href="/wiki/index.php/Special:Contributions/141.101.98.209" title="Special:Contributions/141.101.98.209">141.101.98.209</a> 09:50, 7 January 2014 (UTC)
+</p>
+<dl><dd> Gee, would that be "No one wins at \S+ golf."? <a href="/wiki/index.php/User:IronyChef" title="User:IronyChef">IronyChef</a> (<a href="/wiki/index.php/User_talk:IronyChef" title="User talk:IronyChef">talk</a>) 23:57, 9 January 2014 (UTC)</dd></dl>
+<p>Why does this say that it is Case Sensitive. As far as I can tell it would not work if that were true.<a href="/wiki/index.php/Special:Contributions/108.162.219.59" title="Special:Contributions/108.162.219.59">108.162.219.59</a> 02:28, 7 February 2014 (UTC)
+</p><p>"Note that if one included the animated film “Star Wars: The Clone Wars” it would be matched by “ [tn]”."
+- I don't see how this is true, since the T is at the beginning of the subtitle.  If this matched, then surely so would all of the original series Star Trek films.  <small><a href="/wiki/index.php/Special:Contributions/141.101.99.41" title="Special:Contributions/141.101.99.41">141.101.99.41</a> (<a href="/wiki/index.php?title=User_talk:141.101.99.41&amp;action=edit&amp;redlink=1" class="new" title="User talk:141.101.99.41 (page does not exist)">talk</a>)  <span style="color:grey; white-space:nowrap;"><i>(please sign your comments with ~~~~)</i></span></small>
+</p><p>"I got infinite problems and a bitch ain,t one" 15:50, 29 August 2014 (UTC)  <small><a href="/wiki/index.php/Special:Contributions/173.245.56.191" title="Special:Contributions/173.245.56.191">173.245.56.191</a> (<a href="/wiki/index.php?title=User_talk:173.245.56.191&amp;action=edit&amp;redlink=1" class="new" title="User talk:173.245.56.191 (page does not exist)">talk</a>)  <span style="color:grey; white-space:nowrap;"><i>(please sign your comments with ~~~~)</i></span></small>
+</p><p>Looks like the algorithm is a bit outdated. It fails to match <a href="https://en.wikipedia.org/wiki/Star_Wars:_The_Force_Awakens" class="extiw" title="wikipedia:Star Wars: The Force Awakens">The Force Awakens</a> but matches <a href="https://en.wikipedia.org/wiki/Star_Trek_Beyond" class="extiw" title="wikipedia:Star Trek Beyond">Beyond</a>--<a href="/wiki/index.php/Special:Contributions/108.162.212.51" title="Special:Contributions/108.162.212.51">108.162.212.51</a> 17:57, 5 September 2015 (UTC)
+</p><p>For the 2016 election, the regex predicts that a Democrat (either) will beat Donald Trump, who will win the Republican primaries.  <small><a href="/wiki/index.php/Special:Contributions/141.101.106.233" title="Special:Contributions/141.101.106.233">141.101.106.233</a> (<a href="/wiki/index.php?title=User_talk:141.101.106.233&amp;action=edit&amp;redlink=1" class="new" title="User talk:141.101.106.233 (page does not exist)">talk</a>)  <span style="color:grey; white-space:nowrap;"><i>(please sign your comments with ~~~~)</i></span></small>
+</p><p>I like that linked article, even though I'm not really into programming. Just noticed Norvig misspells Randall's last name as Monroe instead of Munroe.
+<a href="/wiki/index.php/Special:Contributions/108.162.237.71" title="Special:Contributions/108.162.237.71">108.162.237.71</a> 03:42, 15 March 2016 (UTC)
+</p><p>How would Trump work with this? 
+EDIT: Hillary works but Trump doesn't. <a href="/wiki/index.php/Special:Contributions/162.158.75.73" title="Special:Contributions/162.158.75.73">162.158.75.73</a> 00:23, 14 November 2016 (UTC)
+</p><p><br />
+The article says that the Presidents Regex is now impossible to update after Trump's win over Hillary. However, if Hillary were to win in a future election, it would work again as per the rule stated above the list, wouldn't it? --<a href="/wiki/index.php/Special:Contributions/162.158.91.35" title="Special:Contributions/162.158.91.35">162.158.91.35</a> 09:26, 3 April 2017 (UTC)
+</p><p>This isn't true either - there was already a presidential loser whose surname was Clinton (DeWitt Clinton, 1812). So presumably Hillary Clinton is likewise not considered in terms of regex eligibility. --<a href="/wiki/index.php/Special:Contributions/172.68.132.59" title="Special:Contributions/172.68.132.59">172.68.132.59</a> 23:05, 13 April 2017 (UTC)
+</p><p>For the Star Wars/Star Trek golf, including the new films, I've got /m | [tn]|ba|a[sw]/. Can anyone do better?  <small> -- <a href="/wiki/index.php?title=User:Misterblue28&amp;action=edit&amp;redlink=1" class="new" title="User:Misterblue28 (page does not exist)">Misterblue28</a> (<a href="/wiki/index.php?title=User_talk:Misterblue28&amp;action=edit&amp;redlink=1" class="new" title="User talk:Misterblue28 (page does not exist)">talk</a>)  <span style="color:grey; white-space:nowrap;"><i>(please sign your comments with ~~~~)</i></span></small>
+</p>
+<dl><dd>Including Star Wars films up to <i>The Rise of Skywalker</i>, I get /ke|a.t.|n.*h/. --<a href="/wiki/index.php/Special:Contributions/172.69.63.47" title="Special:Contributions/172.69.63.47">172.69.63.47</a> 20:46, 20 May 2019 (UTC)</dd></dl>
+<p>Does this work for Trump v Hillary?  <small><a href="/wiki/index.php/Special:Contributions/162.158.154.103" title="Special:Contributions/162.158.154.103">162.158.154.103</a> (<a href="/wiki/index.php?title=User_talk:162.158.154.103&amp;action=edit&amp;redlink=1" class="new" title="User talk:162.158.154.103 (page does not exist)">talk</a>)  <span style="color:grey; white-space:nowrap;"><i>(please sign your comments with ~~~~)</i></span></small>
+</p>
+<dl><dd> I was just wondering the same thing. Pretty sure it's now literally impossible, since you'd have to both match AND exclude "Clinton". <a href="/wiki/index.php/Special:Contributions/162.158.75.88" title="Special:Contributions/162.158.75.88">162.158.75.88</a> 13:15, 2 October 2018 (UTC)</dd></dl>
+<h2><span class="mw-headline" id="Regex_golf_with_transcript">Regex golf with transcript</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=Talk:1313:_Regex_Golf&amp;action=edit&amp;section=T-1" title="Talk:1313: Regex Golf">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>So I decided to play regex golf with the transcript (after learning regex) and it was kinda fun.
+Here's my list of lines to match:
+</p><p>[Megan is sitting at a laptop. Cueball is standing behind her.]
+</p><p>Megan: /m | [tn]|b/ matches Star Wars subtitles but not Star Trek.
+</p><p>[A close-up of Megan at her laptop.]
+</p><p>Cueball (offscreen): Uh oh...
+</p><p>[Megan typing at her laptop.]
+</p><p>[Cueball facepalming.]
+</p><p>[Another closeup of Megan at her laptop.]
+</p><p>Cueball: Now you have infinite problems.
+</p><p><br />
+Here's my list of lines not to match:
+</p><p>Regex golf:
+</p><p>Megan: You try to match one group but not the other.
+</p><p>Cueball: Cool.
+</p><p>Meta-regex golf:
+</p><p>Megan: So I wrote a program that plays regex golf with arbitrary lists...
+</p><p>Meta-meta-regex golf:
+</p><p>Megan: ...But I lost my code, so I'm grepping for files that look like regex golf solvers.
+</p><p>...And beyond:
+</p><p>Megan: Really, this is all /(meta-)*regex golf/.
+</p><p>Megan: No, I had those already.
+</p><p>And here's my (very bad) regex.
+\[|ms|h\.
+(Hey, I learned yesterday)<a href="/wiki/index.php/Special:Contributions/162.158.255.34" title="Special:Contributions/162.158.255.34">162.158.255.34</a> 16:40, 17 October 2019 (UTC)
+</p>
+ </div>
+
+<!-- 
+NewPP limit report
+Cached time: 20210930024857
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.065 seconds
+Real time usage: 0.080 seconds
+Preprocessor visited node count: 933/1000000
+Preprocessor generated node count: 2618/1000000
+Post‐expand include size: 76711/2097152 bytes
+Template argument size: 3104/2097152 bytes
+Highest expansion depth: 10/40
+Expensive parser function count: 2/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   38.359      1 -total
+ 35.66%   13.679     54 Template:w
+ 30.62%   11.744      1 Template:comic_discussion
+ 25.12%    9.637      1 Template:comic
+ 18.45%    7.078      1 Talk:1313:_Regex_Golf
+  5.46%    2.094      4 Template:unsigned_ip
+  4.11%    1.576      1 Template:unsigned
+  3.46%    1.327      2 Template:LATESTCOMIC
+  3.12%    1.196      1 MediaWiki:Mainpage
+-->
+</div>
+<!-- Saved in parser cache with key expla0_db423085716:pcache:idhash:13870-0!canonical and timestamp 20210930024857 and revision id 218223
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://www.explainxkcd.com/wiki/index.php?title=1313:_Regex_Golf&amp;oldid=218223">https://www.explainxkcd.com/wiki/index.php?title=1313:_Regex_Golf&amp;oldid=218223</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/index.php/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="/wiki/index.php/Category:All_comics" title="Category:All comics">All comics</a></li><li><a href="/wiki/index.php/Category:Comics_from_2014" title="Category:Comics from 2014">Comics from 2014</a></li><li><a href="/wiki/index.php/Category:Comics_from_January" title="Category:Comics from January">Comics from January</a></li><li><a href="/wiki/index.php/Category:Monday_comics" title="Category:Monday comics">Monday comics</a></li><li><a href="/wiki/index.php/Category:Comics_featuring_Cueball" title="Category:Comics featuring Cueball">Comics featuring Cueball</a></li><li><a href="/wiki/index.php/Category:Comics_featuring_Megan" title="Category:Comics featuring Megan">Comics featuring Megan</a></li><li><a href="/wiki/index.php/Category:Regex" title="Category:Regex">Regex</a></li><li><a href="/wiki/index.php/Category:Star_Trek" title="Category:Star Trek">Star Trek</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="/wiki/index.php/Special:MyTalk" title="Discussion about edits from this IP address [n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs"><a href="/wiki/index.php/Special:MyContributions" title="A list of edits made from this IP address [y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="/wiki/index.php?title=Special:CreateAccount&amp;returnto=1313%3A+Regex+Golf" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/wiki/index.php?title=Special:UserLogin&amp;returnto=1313%3A+Regex+Golf" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+														<li id="ca-nstab-main" class="selected"><span><a href="/wiki/index.php/1313:_Regex_Golf" title="View the content page [c]" accesskey="c">Page</a></span></li>
+							<li id="ca-talk"><span><a href="/wiki/index.php/Talk:1313:_Regex_Golf" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+						</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+														<li id="ca-view" class="selected"><span><a href="/wiki/index.php/1313:_Regex_Golf">Read</a></span></li>
+							<li id="ca-edit"><span><a href="/wiki/index.php?title=1313:_Regex_Golf&amp;action=edit" title="Edit this page [e]" accesskey="e">Edit</a></span></li>
+							<li id="ca-history" class="collapsible"><span><a href="/wiki/index.php?title=1313:_Regex_Golf&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+						</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/wiki/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search explain xkcd" title="Search explain xkcd [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/index.php/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="/wiki/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-Latest-comic"><a href="/wiki/index.php/2522">Latest comic</a></li><li id="n-portal"><a href="/wiki/index.php/explain_xkcd:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-xkcd-com"><a href="//xkcd.com" rel="nofollow">xkcd.com</a></li><li id="n-recentchanges"><a href="/wiki/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="/wiki/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-All-comics"><a href="/wiki/index.php/List_of_all_comics">All comics</a></li><li id="n-Browse-comics"><a href="/wiki/index.php/Category:Comics">Browse comics</a></li><li id="n-RSS-feed"><a href="//explainxkcd.com/rss.xml" rel="nofollow">RSS feed</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="/wiki/index.php/Special:WhatLinksHere/1313:_Regex_Golf" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/wiki/index.php/Special:RecentChangesLinked/1313:_Regex_Golf" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="/wiki/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="/wiki/index.php?title=1313:_Regex_Golf&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="/wiki/index.php?title=1313:_Regex_Golf&amp;oldid=218223" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/wiki/index.php?title=1313:_Regex_Golf&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-' aria-labelledby='p--label'>
+			<h3 id='p--label'></h3>
+
+			<div class="body">
+				<div class='g-follow' data-annotation='none' data-height='20' data-href='https://plus.google.com/100547197257043990051' data-rel='publisher'></div>
+
+<script type='text/javascript'>
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<a href='https://twitter.com/explainxkcd' class='twitter-follow-button' data-show-count='false' data-show-screen-name='false'>Follow @explainxkcd</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<div id='fb-root'></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = '//connect.facebook.net/en_US/all.js#xfbml=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class='fb-like' data-href='https://www.facebook.com/explainxkcd' data-layout='button' data-action='like' data-show-faces='false'></div>
+<style>#pw{position:relative;height:620px;}#lp{position:relative;height:610px;}</style><div id='pw'><p></p><div id='lp'><a href='http://www.lunarpages.com/explainxkcd/'><img src='//www.explainxkcd.com/wiki/lunarpages_160x600.jpg'></img></a></div></div>
+			</div>
+		</div>
+			<div class="portal" role="navigation" id='p-Ads' aria-labelledby='p-Ads-label'>
+			<h3 id='p-Ads-label'>Ads</h3>
+
+			<div class="body">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block;" 
+     data-ad-client="ca-pub-7040100948805002"
+     data-ad-format="auto"
+     enable_page_level_ads="true"
+     data-ad-type="text">
+</ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><script>$('#p-Ads').addClass('persistent');</script>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last edited on 20 September 2021, at 08:29.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="/wiki/index.php/explain_xkcd:Privacy_policy" title="explain xkcd:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/wiki/index.php/explain_xkcd:About" class="mw-redirect" title="explain xkcd:About">About explain xkcd</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/index.php/explain_xkcd:General_disclaimer" title="explain xkcd:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="//www.mediawiki.org/"><img src="/wiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/wiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /wiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a><a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" alt="Creative Commons License" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.065","walltime":"0.080","ppvisitednodes":{"value":933,"limit":1000000},"ppgeneratednodes":{"value":2618,"limit":1000000},"postexpandincludesize":{"value":76711,"limit":2097152},"templateargumentsize":{"value":3104,"limit":2097152},"expansiondepth":{"value":10,"limit":40},"expensivefunctioncount":{"value":2,"limit":100},"timingprofile":["100.00%   38.359      1 -total"," 35.66%   13.679     54 Template:w"," 30.62%   11.744      1 Template:comic_discussion"," 25.12%    9.637      1 Template:comic"," 18.45%    7.078      1 Talk:1313:_Regex_Golf","  5.46%    2.094      4 Template:unsigned_ip","  4.11%    1.576      1 Template:unsigned","  3.46%    1.327      2 Template:LATESTCOMIC","  3.12%    1.196      1 MediaWiki:Mainpage"]},"cachereport":{"timestamp":"20210930024857","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":54});});</script>
+	</body>
+</html>
