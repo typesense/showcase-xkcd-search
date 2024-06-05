@@ -1,27 +1,33 @@
 module.exports = {
-  "extends": "eslint:recommended",
+  extends: 'eslint:recommended',
   plugins: ['prettier'],
   rules: {
-    'prettier/prettier': 'error',
+    //https://stackoverflow.com/a/53769213
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
   },
   parser: 'babel-eslint',
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true,
-      "modules": true
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+      modules: true,
     },
-    "ecmaVersion": 2020,
-    "sourceType": "module",
-    "useJSXTextNode": true
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    useJSXTextNode: true,
   },
-  "root": true,
-  "env": {
-    "browser": true,
-    "es6": true,
-    "node": true,
-    "commonjs": true
+  root: true,
+  env: {
+    browser: true,
+    es6: true,
+    node: true,
+    commonjs: true,
   },
-  "globals": {
-    "$": true
-  }
+  globals: {
+    $: true,
+  },
 };
