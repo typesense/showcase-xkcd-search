@@ -10,7 +10,7 @@
     "fetchData": "node scripts/fetchExplainXkcdData.mjs && node scripts/fetchXkcdData.mjs",
     "transformData": "node scripts/transformData.mjs",
     "indexData": "node scripts/indexData.js",
-    "refreshData": "yarn fetchData && yarn transformData && yarn indexData",
+    "refreshData": "yarn transformData && yarn indexData",
     "build": "parcel build index.html --public-url https://findxkcd.com"
   },
   "engines": {
