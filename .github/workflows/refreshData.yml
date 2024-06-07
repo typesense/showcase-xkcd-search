@@ -26,7 +26,7 @@ jobs:
       - name: Download xkcd cache
         uses: dawidd6/action-download-artifact@v2
         with:
-          name: xkcd-cache
+          name: xkcd-cache-v2
           search_artifacts: true
           workflow_conclusion: ""
           if_no_artifact_found: warn
@@ -61,7 +61,7 @@ jobs:
         uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: xkcd-cache
+          name: xkcd-cache-v2
           path: xkcd-cache.tar.gz
           if-no-files-found: warn
           retention-days: 7
