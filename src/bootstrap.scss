@@ -1,3 +1,6 @@
+@use "sass:color";
+
+@forward '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 $font-family-sans-serif: 'Barlow', sans-serif;
 
@@ -21,7 +24,7 @@ $link-color: $gray-500;
 
 $input-font-weight: 400;
 $input-border-width: 2px;
-$input-border-color: lighten($black, 10%);
+$input-border-color: color.adjust($black, $lightness: 10%, $space: hsl);
 $input-focus-border-color: $black;
 $input-btn-focus-box-shadow: 0 0 15px 0.2em rgba($input-focus-border-color, 0.1);
 
@@ -55,9 +58,7 @@ $badge-padding-y: 0.75em;
 $enable-rounded: false;
 $enable-responsive-font-sizes: true;
 
-$link-hover-color: darken($link-color, 50%);
-
-@import '~bootstrap/scss/bootstrap';
+$link-hover-color: color.adjust($link-color, $lightness: -50%, $space: hsl);
 
 .font-letter-spacing-tight {
   letter-spacing: -0.05rem;

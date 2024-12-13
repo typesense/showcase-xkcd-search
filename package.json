@@ -29,23 +29,23 @@
     "parcel": "^2.13.2",
     "prettier": "3.4.2",
     "process": "^0.11.10",
-    "sass": "^1.32.12"
+    "sass": "^1.83.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.14.0",
     "@popperjs/core": "^2.9.2",
-    "bootstrap": "^5.3.3",
+    "bootstrap": "4.5.2",
     "cheerio": "^1.0.0-rc.10",
     "copy-to-clipboard": "^3.3.1",
     "dotenv": "^16.4.7",
-    "instantsearch.js": "^4.22.0",
+    "instantsearch.js": "^4.75.6",
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",
     "luxon": "^3.5.0",
     "node-fetch": "^3.0.0",
     "popper.js": "^1.16.1",
-    "typesense": "^1.7.2-0",
-    "typesense-instantsearch-adapter": "^2.7.1"
+    "typesense": "^1.8.2",
+    "typesense-instantsearch-adapter": "^2.8.0"
   },
   "sass": {
     "quietDeps": true
