@@ -46,8 +46,5 @@
     "popper.js": "^1.16.1",
     "typesense": "^1.8.2",
     "typesense-instantsearch-adapter": "^2.8.0"
-  },
-  "sass": {
-    "quietDeps": true
   }
 }
