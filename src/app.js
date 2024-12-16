@@ -15,13 +15,9 @@ import {
   refinementList,
   menu,
   sortBy,
-  currentRefinements,
-  rangeInput,
-  toggleRefinement,
 } from 'instantsearch.js/es/widgets';
 import TypesenseInstantSearchAdapter from 'typesense-instantsearch-adapter';
 import { SearchClient as TypesenseSearchClient } from 'typesense'; // To get the total number of docs
-import images from '../images/*.*';
 import STOP_WORDS from './utils/stop_words.json';
 import copyToClipboard from 'copy-to-clipboard';
 
@@ -201,8 +197,8 @@ search.addWidgets([
                   <a href="https://www.xkcd.com/${
                     data.id
                   }" target="_blank" class="text-decoration-none">${
-          data.publishDateYear
-        }-${data.publishDateMonth}-${data.publishDateDay}</a>
+                    data.publishDateYear
+                  }-${data.publishDateMonth}-${data.publishDateDay}</a>
                   • <a class="btn-copy-to-clipboard text-decoration-none" href="#" data-link="https://www.xkcd.com/${
                     data.id
                   }">Copy to Clipboard</a>
